@@ -20,3 +20,14 @@ int verificaNumero(long long int num, Cartao& cartao){
     return 0;
   }
 }
+
+//Função que verifica se o mês é válido
+int verificaMes(int m, Cartao& cartao){
+  if(m>1 || m<12){
+    cartao.mesValidade=m;
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
