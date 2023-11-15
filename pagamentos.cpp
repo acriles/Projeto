@@ -31,3 +31,13 @@ int verificaMes(int m, Cartao& cartao){
     return 0;
   }
 }
+
+//Função que verifica se o ano é válido
+int verificaAno(int a, Cartao& cartao){
+  if(a>=23 || a<=40){  //Supondo que um cartão atual não tenha validade até 2040
+    cartao.anoValidade=a;
+    return 1;
+  }
+  else{
+    return 0;
+  }
