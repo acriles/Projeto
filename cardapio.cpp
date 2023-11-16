@@ -13,7 +13,6 @@ void Cardapio::inicializarCardapio(){
     pizzas.push_back(Pizza("Bacon", "Média", {}, 49));
     pizzas.push_back(Pizza("Bacon", "Grande", {}, 59));
     
-
     //inicializando as bebidas do cardapio 
     bebidas.push_back(Bebida("Refrigerante", "Coca", "Lata", 5.00)); 
     bebidas.push_back(Bebida("Refrigerante", "Coca", "600ml", 7.00)); 

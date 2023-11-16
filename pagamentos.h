@@ -15,11 +15,12 @@ Cartão de Débito:  Solicitar nome do titular; número do cartão (16 dígitos)
 
 #ifndef PAGAMENTOS_H
 #define PAGAMENTOS_H
+using namespace std;
 
 //Struct Cartao: armazena os dados do cartão de crédito/debito a ser utilizado no pagamento
 struct Cartao {
 public:
-   std::string nomeTitular;
+   string nomeTitular;
    long long int numeroCartao; // Usando long long int para representar um número de 16 bits
    int mesValidade;
    int anoValidade;

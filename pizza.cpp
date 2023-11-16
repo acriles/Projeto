@@ -57,13 +57,13 @@ void Pizza::setSabor(string _sabor){
    cin >> sabor; 
    cout << "Digite o tamanho" << endl;
    cin >> tamanho;
-   cout << "Deseja adicionar acrescimos? Caso sim, digite 1, caso contrario digite 2" << endl;
-   cin >> confirma;
-   if (confirma==1){
-      cout << "Digite o acrescimo que deseja:" << endl;
-      cin >> adicional;
-      addAdicional(adicional);
-   }
+   // cout << "Deseja adicionar acrescimos? Caso sim, digite 1, caso contrario digite 2" << endl;
+   // cin >> confirma;
+   // if (confirma==1){
+   //    cout << "Digite o acrescimo que deseja:" << endl;
+   //    cin >> adicional;
+   //    addAdicional(adicional);
+   // }
  }
 
 

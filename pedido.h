@@ -1,7 +1,6 @@
 #ifndef PEDIDO_H
 #define PEDIDO_H
-#include "pizza.h"
-#include "bebida.h"
+#include "cardapio.h"
 #include <string>
 #include <vector>
 
@@ -10,13 +9,18 @@ private:
     float valorTotal; //valor de entrega, pizza e bebida 
     string formaPagamento;
     string endereco;
-    vector <Pizza> pizzaPedido; //vetor de pizzas que o usuario vai pedir 
+    // Pizza setPizza; //tipo pizza que monta a primeira pizza, variavel que sera adicionada no vetor de pizzas 
+    // Bebida setBebida;
+    vector <Pizza> pizzaPedido; //vetor de pizzas que o usuario vai pedir, a cada posicao desse vetor eu adiciono uma pedidoPizza
     vector <Bebida> bebidaPedido; //vetor de bebidas que o usuario vai pedir 
 public: 
     Pedido();
     float calcularValorTotal();
-    void setFormaPagamento();
+    void setFormaPagamento(string _formaPagamento);
     string getFormaPagamento();
-    void montarPizza();
+    void setVetorPizza(vector <Pizza> _pizzaPedido);
+    void setVetorBebida(vector <Bebida> _bebidaPedido); 
+    void vetorBebidas();
+    void vetorPizzas(); //funcao que inicializa o vetor com as pizzas que serao pedidas 
 };
 #endif

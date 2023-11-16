@@ -2,6 +2,8 @@
 #include <iostream>
 
 
+Bebida::Bebida(){
+}
 
 Bebida::Bebida(string _tipo, string _sabor, string _tamanho, float _valor){
   tipo = _tipo;
