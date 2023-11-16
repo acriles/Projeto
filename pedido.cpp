@@ -1,8 +1,6 @@
 #include <iostream>
 #include "pedido.h"
 
-
-
 using namespace std;
 
 Pedido::Pedido(){
@@ -38,4 +36,8 @@ void Pedido::vetorPizzas(){ //adiciona a primeira pizza inicializada na primeira
     Pizza setPizza;
     setPizza.inicializandoPizza();
     pizzaPedido.push_back(setPizza);
+}
+
+void Pedido::imprimePedido(){
+    
 }

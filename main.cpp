@@ -3,6 +3,7 @@
 #include "pedido.h"
 #include "cardapio.h"
 
+
 using namespace std;
 
  int main(){
@@ -22,6 +23,7 @@ using namespace std;
 
       Pedido pedido;
       pedido.vetorPizzas();
+      pedido.imprimePizzas();
 
     
     return 0;

@@ -1,6 +1,7 @@
 #ifndef PEDIDO_H
 #define PEDIDO_H
-#include "cardapio.h"
+#include "pizza.h"
+#include "bebida.h"
 #include <string>
 #include <vector>
 
@@ -20,7 +21,8 @@ public:
     string getFormaPagamento();
     void setVetorPizza(vector <Pizza> _pizzaPedido);
     void setVetorBebida(vector <Bebida> _bebidaPedido); 
-    void vetorBebidas();
+    void vetorBebidas(); //funcao que incializa o vetor com as bebidas que serao pedidas 
     void vetorPizzas(); //funcao que inicializa o vetor com as pizzas que serao pedidas 
+    void imprimePedido();
 };
 #endif
