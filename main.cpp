@@ -7,10 +7,11 @@
 using namespace std;
 
  int main(){
-  // Usuario user({}, {}, {}, {});
-  // user.cadastroInicial();
-  // user.imprimeUsuario();
-  
+  Usuario user({}, {}, {}, {});
+   user.cadastroInicial();
+  user.PossuiCadastro();
+  user.imprimeUsuario();
+
     // Pizza pizza1;
     // pizza1.inicializandoPizza();
 
