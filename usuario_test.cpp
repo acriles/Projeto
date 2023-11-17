@@ -3,14 +3,8 @@
 #include "doctest.hpp"
 #include "usuario.hpp"
 
-/*TEST_CASE("Usuario initial size is 0") {
-  Usuario user;
-  user.setCpf(34);
-  CHECK_EQ(user.getCpf(), 34);
-}*/
-TEST_CASE("Usuario initial size is 0") {
-  Usuario user;
-  // user.cadastroInicial();
+TEST_CASE("Criando usario com set") {
+  Usuario user({},{},{},{});
   user.setNome("samuel");
   user.setEndereco("Rua sara");
   user.setCpf(123456789);
@@ -22,7 +16,7 @@ TEST_CASE("Usuario initial size is 0") {
   // CHECK_EQ(user.getTelefone(), 318976);
 }
 
-TEST_CASE("TESTANDO USER") {
+TEST_CASE("Criando usario com o construtor") {
   Usuario user = Usuario("samuel", "sara", 123, 456);
   CHECK_EQ(user.getCpf(), 456);
   CHECK_EQ(user.getNome(), "samuel");
