@@ -3,8 +3,14 @@
 
 using namespace std;
  
- Usuario::Usuario(){ //inicializa a classe com campos vazios 
-  }
+ Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf) {
+  cpf = _cpf;
+  nome = _nome;
+  endereco = _endereco;
+  telefone = _telefone;
+
+  // inicializa a classe com campos vazios
+}
 
 
     Usuario::~Usuario(void){ 
@@ -35,7 +41,9 @@ using namespace std;
      string Usuario::getEndereco(){
       return endereco;
      }
-
+    int Usuario::getTelefone(){
+     return telefone;
+    }
       void Usuario::cadastroInicial(){
          int confirmacaoPedido;
        cout << "Iniciando o cadastro... Digite seu nome" << endl;
