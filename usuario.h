@@ -20,6 +20,8 @@ class Usuario{
      int getTelefone();
      void setCpf(int _cpf);
      void imprimeUsuario();
+     void Fazer_login();
+     void PossuiCadastro();
       ~Usuario(void); //destrutor 
    
 };
