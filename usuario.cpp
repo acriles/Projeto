@@ -15,7 +15,7 @@ using namespace std;
 
     Usuario::~Usuario(void){ 
       nome.clear();
-     endereço.clear();
+     endereco.clear();
       cout << "Classe destruida" << endl;
     }
 
