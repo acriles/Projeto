@@ -43,5 +43,20 @@ int verificaAno(int a, Cartao& cartao){
   }
 
 //Função que verifica se o CVV tem 3 dígitos
+int verificaCvv (int cod, Cartao& cartao){
+  long long int aux=cod;
+	
+	while (aux!=0){
+		aux/=10;
+		cont++;
+	}
+  	if (cont==3){                                   //se tiver 3 dígitos, o CVV digitado é valido, logo podemos armazenar na struct
+		cartao.cvv=cod;
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
 
 
