@@ -151,4 +151,17 @@ voidcoletaDadosCartao (Cartao& cartao)
 	}
 
 	
+	//Coleta cvv
+	
+	cout<<"Digite cvv (3 digitos): ";
+	int codigo;
+	cin>>codigo;
+	
+	while (verificaCvv(codigo, cartao)==0{
+		cout<<"CVV incorreto. Digite novamente: ";            //TESTCASE
+		cin>>codigo;
+	}
+		
+}
+	
 
