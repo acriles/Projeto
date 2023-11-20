@@ -82,12 +82,14 @@ void ImprimeFormasPagamento (){
 
 
 //Funcao para que a forma de pagamento seja via PIX (1)------------------------------
-void chavePIX ()(
+void chavePIX ()
 {
 	cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<endl;
 }
 
 
 
-Função 
+//Função caso a forma de pagamento seja via Dinheiro (2)----------------------------
+void Dinheiro ()
+{
 
