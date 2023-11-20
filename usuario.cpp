@@ -8,6 +8,7 @@
 #include <cppconn/resultset.h>
 
 using namespace std;
+Usuario::Usuario(){}
 Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs) {
   cpf = _cpf;
   nome = _nome;
