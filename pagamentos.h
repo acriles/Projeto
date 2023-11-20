@@ -1,8 +1,8 @@
 #include <string>
+#include <iostream>
 
 #ifndef PAGAMENTOS_H
 #define PAGAMENTOS_H
-using namespace std;
 
 //Struct Cartao: armazena os dados do cartão de crédito/débito a ser utilizado no pagamento
 struct Cartao {
@@ -14,10 +14,13 @@ public:
    int cvv;
 };
 
-class Pagamentos{
-private:
-   double pix;
-   double dinheiro;
-   Cartao cartaoCred;
+
+class Pagamentos{	
+public:
+	Cartao cartaoCred;
    Cartao cartaoDeb;
+	void PIX();
+	void Dinheiro();
 };
+
+#endif
