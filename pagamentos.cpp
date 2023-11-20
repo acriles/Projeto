@@ -60,3 +60,26 @@ int verificaCvv (int cod, Cartao& cartao){
 }
 
 
+//MÉTODOS-------------------------------------------------------------------------------
+
+//Funcao para que o usuário selecione a forma de pagamento------------------------------
+void ImprimeFormasPagamento (){
+	cout << "Digite o número de acordo com a forma de pagamento que você deseja"<<endl;
+	cout<<"1. Pix"<<endl;
+	cout<<"2. Dinheiro"<<endl;
+	cout<<"3. Cartão de Crédito"<<endl;
+	cout<<"4. Cartão de Débito"<<endl;
+
+	int pagamento=0;                              //"zerando" a escolha
+	cout<< "Forma de pagamento: "; 
+	cin >> pagamento;
+	
+	if(pagamento<1 || pagamento >4){
+		cout<< "Opção inválida"<<endl;     //TESTCASE            
+	}
+}
+
+
+
+
+
