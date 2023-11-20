@@ -92,4 +92,18 @@ void chavePIX ()
 //Função caso a forma de pagamento seja via Dinheiro (2)----------------------------
 void Dinheiro ()
 {
+	cout<< "Pagamento a ser realizado na entrega."<<endl;
+	cout<< "Será necessário troco?"<<endl<< "1. Sim" << endl << "2.Não" << endl;
+	
+	int escolhaTroco=0;
+	cout<< "Troco?";
+	cin >> escolhaTroco;
+	
+	if (escolhaTroco==1){
+		cout<<"Troco para quanto?"<<endl;
+	}
+	
+	int valor;
+	cin>>valor;
+	
 
