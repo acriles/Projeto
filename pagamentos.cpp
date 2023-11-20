@@ -105,5 +105,6 @@ void Dinheiro ()
 	
 	int valor;
 	cin>>valor;
+}
 	
 
