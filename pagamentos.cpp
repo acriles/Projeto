@@ -106,5 +106,49 @@ void Dinheiro ()
 	int valor;
 	cin>>valor;
 }
+
+
+
+//Função caso a forma de pagamento seja via Cartão de crédito ou débito (3 e 4)----
+voidcoletaDadosCartao (Cartao& cartao)
+{
+	//Coleta nome do titular
+	cout<<"Digite o nome do titular do cartão: ";
+	cin>> cartao.nomeTitular;
+	
+	
+	//Coleta e numero do cartão
+	cout<<"Digite o número do cartão (16 dígitos): ";
+	long long int numero;
+	cin>>numero;
+	
+	while(verificaNumero(numero, cartao)==0){
+		cout<<"Número do cartão incorreto. Digite novamente: ";     //TESTCASE
+		cin>>numero;
+	}
+	
+	
+	//Coleta mês de validade
+	cout<<"Digite o mês de validade: ";
+	int mes;
+	cin>>mes;
+	
+	while (verificaMes(mes, cartao)==0){
+		cout<<"Mês inválido! Digite novamente: ";
+		cin>>mes;
+	}
+	
+	
+	//Coleta ano de validade
+
+	cout<<"Digite o ano validade (2 últimos dígitos): ";          
+	int ano;
+	cin>>ano;
+	
+	while (verificaAno(ano, cartao)==0){
+		cout<<"Ano inválido! Digite novamente: ";               //TESTCASE
+		cin>>ano;
+	}
+
 	
 
