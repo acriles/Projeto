@@ -31,7 +31,7 @@ int main(){
    // cardapio.getBebidas();
 
 
- //PEDIDO
+ //PEDIDO----------------------------------------------
      Pedido pedido;
      pedido.vetorPizzas();
      pedido.imprimePizzas();
@@ -43,8 +43,7 @@ int main(){
     	
     	int opcaoPagamento = imprimeFormasPagamento();
     	
-    	
-    	while (!(opcaoPagamento>=1 && opcaoPagamento<=4))
+    	while (!(opcaoPagamento>=1 && opcaoPagamento<=4))             //Verifica se a escolha está coerente com as opções apresentadas
     		{
     			std::cout<<std::endl;
     			std::cout<< "OPCAO INVALIDA! Digite novamente: ";
