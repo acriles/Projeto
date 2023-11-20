@@ -93,7 +93,9 @@ void chavePIX ()
 void Dinheiro ()
 {
 	cout<< "Pagamento a ser realizado na entrega."<<endl;
-	cout<< "Será necessário troco?"<<endl<< "1. Sim" << endl << "2.Não" << endl;
+	cout<< "Será necessário troco?"<<endl;
+	cout<<"1. Sim" << endl;
+	cout<< "2.Não" << endl;
 	
 	int escolhaTroco=0;
 	cout<< "Troco?";
