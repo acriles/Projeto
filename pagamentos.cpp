@@ -81,5 +81,8 @@ void ImprimeFormasPagamento (){
 
 
 
+//Funcao para que a forma de pagamento seja via PIX (1)------------------------------
+
+
 
 
