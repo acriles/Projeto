@@ -126,9 +126,9 @@ void Pagamentos::Dinheiro ()
 //Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
 void coletaDadosCartao(Cartao& cartao)
 {
-	//Coleta nome do titular
-	std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
-	std::cin>> cartao.nomeTitular;
+//Coleta nome do titular
+    std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
+    std::cin>> cartao.nomeTitular;
 	
 	
 	//Coleta e numero do cartão
