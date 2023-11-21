@@ -34,7 +34,7 @@ int verificaMes(int m, Cartao& cartao){
 
 //Função que verifica se o ano é válido
 int verificaAno(int a, Cartao& cartao){
-  if(a>=23 || a<=40){  //Supondo que um cartão atual não tenha validade até 2040
+  if(a>=23 || a<=40){  //Supondo que um cartão atual não tenha validade superior ao ano de 2040
     cartao.anoValidade=a;
     return 1;
   }
@@ -60,9 +60,9 @@ int verificaCvv (int cod, Cartao& cartao){
 }
 
 
-//MÉTODOS-------------------------------------------------------------------------------
+//MÉTODOS--------------------------------------------------------------------------------------------------------------------------------
 
-//Funcao para que o usuário selecione a forma de pagamento------------------------------
+//Funcao para que o usuário selecione a forma de pagamento
 void ImprimeFormasPagamento (){
 	cout << "Digite o número de acordo com a forma de pagamento que você deseja"<<endl;
 	cout<<"1. Pix"<<endl;
