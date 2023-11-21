@@ -12,7 +12,7 @@ int verificaNumero(long long int num, Cartao& cartao){
     cont++;
   }
 
-  if(cont==16){   //Se tiver 16 dígitos, o número do cartão é válido. Logo, podemos armazenar na strutct
+  if(cont==16){   //Caso tenha 16 dígitos, o número do cartão é válido. Logo, podemos armazenar na strutct
     cartao.numeroCartao=num;
     return 1;
   }
