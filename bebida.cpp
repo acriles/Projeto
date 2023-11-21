@@ -6,15 +6,17 @@ Bebida::Bebida(){
 }
 
 Bebida::Bebida(string _tipo, string _sabor, string _tamanho, float _valor){
-  tipo = _tipo;
-  sabor = _sabor;
-  tamanho = _tamanho;
-  valor = _valor;
+    tipo = _tipo;
+    sabor = _sabor;
+    tamanho = _tamanho;
+    valor = _valor;
 }
 
+
 void Bebida::setSabor(string _sabor){
-   sabor = _sabor; 
+    sabor = _sabor; 
    }
+
 
 void Bebida::setTipo(string _tipo) {
   tipo = _tipo; 
