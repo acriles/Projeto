@@ -98,27 +98,26 @@ void Pagamentos::PIX ()
 }
 
 
-
-//Função caso a forma de pagamento seja via Dinheiro (2)-------------------------
+//Função caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
 void Pagamentos::Dinheiro ()
 {
-	std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
-	std::cout<< "Sera necessario troco?"<<std::endl;
-	std::cout<<std::endl;
-	std::cout<<"1. Sim" << std::endl;
-	std::cout<< "2. Nao" << std::endl;
+std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
+std::cout<< "Sera necessario troco?"<<std::endl;
+std::cout<<std::endl;
+std::cout<<"1. Sim" << std::endl;
+std::cout<< "2. Nao" << std::endl;
 	
-	int escolhaTroco=0;
-	std::cout<<std::endl;
-	std::cin >> escolhaTroco;
+int escolhaTroco=0;
+std::cout<<std::endl;
+std::cin >> escolhaTroco;
 	
-	if (escolhaTroco==1){
-		std::cout<<std::endl;
-		std::cout<<"Troco para quanto?"<<std::endl;
+if (escolhaTroco==1){
+std::cout<<std::endl;
+std::cout<<"Troco para quanto?"<<std::endl;
 	
-		int valor;
-		std::cout<< "Valor em reais: ";
-		std::cin>>valor;
+int valor;
+std::cout<< "Valor em reais: ";
+std::cin>>valor;
 		
 	}
 	
