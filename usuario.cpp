@@ -147,35 +147,34 @@ void Usuario::confirmar_Usuario(){
     cout << "Digite seu CPF: ";
     cin >> cpf_l;
     ler_banco_de_dados();
-  while (continuarLogin) {
-    for (int cpf : cpfs) {
-
-      if (cpf_l == cpf) {
-        cout << "Login realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
-        cin >> confirmacaoPedido;
-        sucesso_login = true;
-        if (confirmacaoPedido == 1) { 
-          cout << "Prosseguindo com pedido" << endl;
-          continuarLogin = false;
-          return;
-        } 
-        else if (confirmacaoPedido == 2) {
-           cout << "Ficamos aguardando por você!" << endl;
-        }
+        
+    while(continuarLogin){
+       for(int cpf : cpfs){
+            if(cpf_l == cpf){
+                    cout << "Login realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
+                    cin >> confirmacaoPedido;
+                    sucesso_login = true;
+                    if(confirmacaoPedido == 1){ 
+                             cout << "Prosseguindo com pedido" << endl;
+                             continuarLogin = false;
+                             return;
+                    } 
+                   else if(confirmacaoPedido == 2){
+                              cout << "Ficamos aguardando por você!" << endl;
+                   }
+            }
        }
-      }
-    if (continuarLogin && sucesso_login == false) {
-      cout << "Cpf incorreto, tente novamente.\n\n";
-      Fazer_login();
+        
+        if(continuarLogin && sucesso_login == false){
+                cout << "Cpf incorreto, tente novamente.\n\n";
+                Fazer_login();
         }
    }
-
 
     }
 
 
-
-void Usuario::inserir_usuario() {
+void Usuario::inserir_usuario(){
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
 
@@ -222,16 +221,16 @@ void Usuario::ler_banco_de_dados() {
 
     res = stmt->executeQuery(query);
 
-    while (res->next()) {
-        cpf = res->getInt("cpf");
-        nome = res->getString("name");
-        telefone = res->getInt("telefone");
-        endereco = res->getString("endereco");
-        cpfs.push_back(cpf);
-
+    while(res->next()){
+            cpf = res->getInt("cpf");
+            nome = res->getString("name");
+            telefone = res->getInt("telefone");
+            endereco = res->getString("endereco");
+            cpfs.push_back(cpf);
     }
 
     delete res;
     delete stmt;
     delete con;
-    }
+    
+}
