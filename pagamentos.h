@@ -18,7 +18,7 @@ public:
 class Pagamentos{	
 public:
 	Cartao cartaoCred;
-   Cartao cartaoDeb;
+        Cartao cartaoDeb;
 	void PIX();
 	void Dinheiro();
 };
