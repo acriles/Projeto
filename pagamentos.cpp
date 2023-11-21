@@ -3,7 +3,7 @@
 
 //*************************************************************TESTE CASES********************************************************************
 
-//Função que verifica se o número tem 16 dígitos:
+//Função que verifica se o número tem 16 dígitos - TESTCASE
 int verificaNumero(long long int num, Cartao& cartao){
     int cont=0;
     long long int aux=num;
