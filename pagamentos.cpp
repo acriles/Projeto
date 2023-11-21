@@ -23,7 +23,7 @@ int verificaNumero(long long int num, Cartao& cartao){
 
 //Função que verifica se o mês é válido
 int verificaMes(int m, Cartao& cartao){
-  if(m>1 || m<12){
+  if(m>1 && m<12){
     cartao.mesValidade=m;
     return 1;
   }
@@ -144,26 +144,6 @@ voidcoletaDadosCartao (Cartao& cartao)
 	//Coleta ano de validade
 
 	cout<<"Digite o ano validade (2 últimos dígitos): ";          
-	int ano;
-	cin>>ano;
-	
-	while (verificaAno(ano, cartao)==0){
-		cout<<"Ano inválido! Digite novamente: ";               //TESTCASE
-		cin>>ano;
-	}
 
-	
-	//Coleta cvv
-	
-	cout<<"Digite cvv (3 digitos): ";
-	int codigo;
-	cin>>codigo;
-	
-	while (verificaCvv(codigo, cartao)==0{
-		cout<<"CVV incorreto. Digite novamente: ";            //TESTCASE
-		cin>>codigo;
-	}
-		
-}
 	
 
