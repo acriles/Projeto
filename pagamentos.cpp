@@ -131,7 +131,7 @@ void coletaDadosCartao(Cartao& cartao)
     std::cin>> cartao.nomeTitular;
 	
 	
-	//Coleta e numero do cartão
+//Coleta numero do cartão
 	std::cout<<std::endl;
 	std::cout<<"Digite o numero do cartao (16 digitos): ";
 	long long int numero;
