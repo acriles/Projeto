@@ -47,23 +47,25 @@ float Bebida::getValor(){
     return valor; 
 }
 
-void Bebida::imprimeBebida() {
-  cout << "Tipo:" << tipo << endl << "Sabor:" << sabor << endl << "Tamanho:" << tamanho << endl << "Valor:" << valor << endl;
+
+void Bebida::imprimeBebida(){
+    cout << "Tipo:" << tipo << endl << "Sabor:" << sabor << endl << "Tamanho:" << tamanho << endl << "Valor:" << valor << endl;
 }
+
 
 void Bebida::inicializandoBebida(){
-  cout << "Qual o tipo de bebida você deseja?" << endl;
-  cin >> tipo;
-  cout << "Digite o sabor" << endl;
-  cin >> sabor;
-  cout << "Digite o tamanho" << endl;
-  cin >> tamanho;
+    cout << "Qual o tipo de bebida você deseja?" << endl;
+    cin >> tipo;
+    cout << "Digite o sabor" << endl;
+    cin >> sabor;
+    cout << "Digite o tamanho" << endl;
+    cin >> tamanho;
 }
 
 
-Bebida::~Bebida(void) {
-  sabor.clear();
-  tipo.clear();
-  tamanho.clear();
-  cout << "Classe destruida" << endl;
+Bebida::~Bebida(void){
+    sabor.clear();
+    tipo.clear();
+    tamanho.clear();
+    cout << "Classe destruida" << endl;
 }
