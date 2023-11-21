@@ -1,7 +1,7 @@
-#include "pagamentos.hpp"
+#include "pagamentos.h"
 #include <iostream>
 
-//TESTE CASES----------------------------------------------------
+//TESTCASES----------------------------------------------------
 
 //Função que verifica se o número tem 16 dígitos - TESTCASE----------------------------------------------------
 int verificaNumero(long long int num, Cartao& cartao){
