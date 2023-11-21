@@ -132,18 +132,17 @@ void coletaDadosCartao(Cartao& cartao)
 	
 	
 //Coleta numero do cartão
-	std::cout<<std::endl;
-	std::cout<<"Digite o numero do cartao (16 digitos): ";
-	long long int numero;
-	std::cin>>numero;
+    std::cout<<std::endl;
+    std::cout<<"Digite o numero do cartao (16 digitos): ";
+    long long int numero;
+    std::cin>>numero;
 	
-	while(!(verificaNumero(numero, cartao))){
-		std::cout<<"Numero do cartao incorreto. Digite novamente: ";     //TESTCASE
-		std::cin>>numero;
-	}
-	
-	
-	//Coleta mês de validade
+    while(!(verificaNumero(numero, cartao))){
+            std::cout<<"Numero do cartao incorreto. Digite novamente: ";     //TESTCASE
+            std::cin>>numero;
+}
+		
+//Coleta mês de validade
 	std::cout<<std::endl;
 	std::cout<<"Digite o mes de validade: ";
 	int mes;
