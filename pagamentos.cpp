@@ -69,3 +69,6 @@ int verificaCvv(int cod, Cartao& cartao){
             return 0;
     }
 }
+
+
+//Métodos----------------------------------------------------
