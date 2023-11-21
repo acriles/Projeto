@@ -96,3 +96,31 @@ void Pagamentos::PIX ()
 {
     std::cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<std::endl;
 }
+
+
+
+//Função caso a forma de pagamento seja via Dinheiro (2)-------------------------
+void Pagamentos::Dinheiro ()
+{
+	std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
+	std::cout<< "Sera necessario troco?"<<std::endl;
+	std::cout<<std::endl;
+	std::cout<<"1. Sim" << std::endl;
+	std::cout<< "2. Nao" << std::endl;
+	
+	int escolhaTroco=0;
+	std::cout<<std::endl;
+	std::cin >> escolhaTroco;
+	
+	if (escolhaTroco==1){
+		std::cout<<std::endl;
+		std::cout<<"Troco para quanto?"<<std::endl;
+	
+		int valor;
+		std::cout<< "Valor em reais: ";
+		std::cin>>valor;
+		
+	}
+	
+
+}
