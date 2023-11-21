@@ -15,45 +15,45 @@ int main(){
     user.PossuiCadastro();
     user.imprimeUsuario();
 
+    
 //PIZZA----------------------------------------------
     // Pizza pizza1;
     // pizza1.inicializandoPizza();
 
+    
 //BEBIDA---------------------------------------------
     // Bebida bebida1;
     // bebida1.inicializandoBebida();
 
-
+    
 //CARDAPIO--------------------------------------------
-   // Cardapio cardapio;
-   // cardapio.inicializarCardapio();
-   // cardapio.getPizzas();
-   // cardapio.getBebidas();
+    // Cardapio cardapio;
+    // cardapio.inicializarCardapio();
+    // cardapio.getPizzas();
+    // cardapio.getBebidas();
 
 
- //PEDIDO----------------------------------------------
-     Pedido pedido;
-     pedido.vetorPizzas();
-     pedido.imprimePizzas();
+//PEDIDO----------------------------------------------
+    Pedido pedido;
+    pedido.vetorPizzas();
+    pedido.imprimePizzas();
 
- 
- //PAGAMENTO------------------------------------------
-
-     Pagamentos pagamentos;
+    
+//PAGAMENTO------------------------------------------
+    Pagamentos pagamentos;
     	
-    	int opcaoPagamento = imprimeFormasPagamento();
+    int opcaoPagamento = imprimeFormasPagamento();
     	
-    	while (!(opcaoPagamento>=1 && opcaoPagamento<=4))             //Verifica se a escolha está coerente com as opções apresentadas
-    		{
-    			std::cout<<std::endl;
-    			std::cout<< "OPCAO INVALIDA! Digite novamente: ";
-    			std::cin>>opcaoPagamento;			
-    		}
+    while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
+            std::cout<<std::endl;
+            std::cout<< "OPCAO INVALIDA! Digite novamente: ";
+            std::cin>>opcaoPagamento;			
+    }
     	
-      std::cout<<std::endl;
+    std::cout<<std::endl;
     
     	
-    	switch (opcaoPagamento){
+    switch (opcaoPagamento){
     		case 1:
     		pagamentos.PIX();
     		break;
@@ -69,13 +69,13 @@ int main(){
     		case 4:
     		coletaDadosCartao(pagamentos.cartaoDeb);
     		break;
-    	}
+    }
     	
     	
-    	std::cout<<std::endl;
-    	std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
-    	std::cout<<std::endl;
+    std::cout<<std::endl;
+    std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
+    std::cout<<std::endl;
 
     
-  return 0;
+    return 0;   
  }
