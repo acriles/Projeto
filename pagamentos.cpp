@@ -111,15 +111,13 @@ void Pagamentos::Dinheiro ()
     std::cout<<std::endl;
     std::cin >> escolhaTroco;
 	
-if (escolhaTroco==1){
-std::cout<<std::endl;
-std::cout<<"Troco para quanto?"<<std::endl;
+    if(escolhaTroco==1){
+            std::cout<<std::endl;
+            std::cout<<"Troco para quanto?"<<std::endl;
 	
-int valor;
-std::cout<< "Valor em reais: ";
-std::cin>>valor;
+            int valor;
+            std::cout<< "Valor em reais: ";
+            std::cin>>valor;
 		
-	}
-	
-
+    }
 }
