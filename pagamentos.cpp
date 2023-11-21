@@ -14,9 +14,9 @@ int verificaNumero(long long int num, Cartao& cartao){
     }
 	
     if(cont==16){     //Se tiver 16 dígitos, o número do cartão é valido. Logo, podemos armazenar na struct
-		cartao.numeroCartao=num;
-		return 1;
-	}
+            cartao.numeroCartao=num;
+	    return 1;
+    }
     else{
 		return 0;
 	}
