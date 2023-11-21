@@ -89,3 +89,10 @@ int imprimeFormasPagamento(){
 	
     return pagamento;
 }
+
+
+//Função caso a forma de pagamento seja via PIX (1)----------------------------------------------------
+void Pagamentos::PIX ()
+{
+    std::cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<std::endl;
+}
