@@ -78,9 +78,9 @@ int imprimeFormasPagamento(){
     std::cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<std::endl;
     std::cout<<std::endl;
     std::cout<<"1. Pix"<<std::endl;
-std::cout<<"2. Dinheiro"<<std::endl;
-std::cout<<"3. Cartao de Credito"<<std::endl;
-std::cout<<"4. Cartao de Debito"<<std::endl;
+    std::cout<<"2. Dinheiro"<<std::endl;
+    std::cout<<"3. Cartao de Credito"<<std::endl;
+    std::cout<<"4. Cartao de Debito"<<std::endl;
 	
 int pagamento=0;
 std::cout<<std::endl;
