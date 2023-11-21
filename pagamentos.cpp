@@ -17,6 +17,7 @@ int verificaNumero(long long int num, Cartao& cartao){
             cartao.numeroCartao=num;
 	    return 1;
     }
+	    
     else{
             return 0;
     }
@@ -29,6 +30,7 @@ int verificaMes(int m, Cartao& cartao){
             cartao.mesValidade=m;
 	    return 1;
     }
+	    
     else{
             return 0;
     }
@@ -38,13 +40,13 @@ int verificaMes(int m, Cartao& cartao){
 //Função que verifica se o ano é válido - TESTCASE
 int verificaAno(int a, Cartao& cartao){
     if(a>=23 && a<=40){             //supondo que um cartão atual não tenha validade superior ao ano de 2040
-		cartao.anoValidade=a;
-		return 1;
-	}
-	
-	else{
-		return 0;
-	}
+            cartao.anoValidade=a;
+	    return 1;
+    }
+	    
+    else{
+            return 0;
+    }
 }
 	
 
