@@ -82,10 +82,10 @@ int imprimeFormasPagamento(){
     std::cout<<"3. Cartao de Credito"<<std::endl;
     std::cout<<"4. Cartao de Debito"<<std::endl;
 	
-int pagamento=0;
-std::cout<<std::endl;
-std::cout<< "Forma de pagamento: ";
-std::cin >> pagamento;
+    int pagamento=0;
+    std::cout<<std::endl;
+    std::cout<< "Forma de pagamento: ";
+    std::cin >> pagamento;
 	
-return pagamento;
+    return pagamento;
 }
