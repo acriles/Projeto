@@ -1,7 +1,7 @@
 #include "pagamentos.hpp"
 #include <iostream>
 
-//*************************************************************TESTE CASES********************************************************************
+//TESTE CASES----------------------------------------------------
 
 //Função que verifica se o número tem 16 dígitos - TESTCASE
 int verificaNumero(long long int num, Cartao& cartao){
@@ -39,7 +39,7 @@ int verificaMes(int m, Cartao& cartao){
 
 //Função que verifica se o ano é válido - TESTCASE
 int verificaAno(int a, Cartao& cartao){
-    if(a>=23 && a<=40){             //supondo que um cartão atual não tenha validade superior ao ano de 2040
+    if(a>=23 && a<=40){     //Supondo que um cartão atual não tenha validade superior ao ano de 2040
             cartao.anoValidade=a;
 	    return 1;
     }
@@ -60,7 +60,7 @@ int verificaCvv(int cod, Cartao& cartao){
             cont++;
     }
 	
-    if(cont==3){                                   //se tiver 3 dígitos, o CVV digitado é valido, logo podemos armazenar na struct
+    if(cont==3){             //se tiver 3 dígitos, o CVV digitado é valido, logo podemos armazenar na struct
             cartao.cvv=cod;
             return 1;
     }
