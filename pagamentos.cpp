@@ -121,3 +121,66 @@ void Pagamentos::Dinheiro ()
 		
     }
 }
+
+
+//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------
+void coletaDadosCartao(Cartao& cartao)
+{
+	//Coleta nome do titular
+	std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
+	std::cin>> cartao.nomeTitular;
+	
+	
+	//Coleta e numero do cartão
+	std::cout<<std::endl;
+	std::cout<<"Digite o numero do cartao (16 digitos): ";
+	long long int numero;
+	std::cin>>numero;
+	
+	while(!(verificaNumero(numero, cartao))){
+		std::cout<<"Numero do cartao incorreto. Digite novamente: ";     //TESTCASE
+		std::cin>>numero;
+	}
+	
+	
+	//Coleta mês de validade
+	std::cout<<std::endl;
+	std::cout<<"Digite o mes de validade: ";
+	int mes;
+	std::cin>>mes;
+	
+	while (!(verificaMes(mes, cartao))){
+		std::cout<<"Mes invalido! Digite novamente: ";
+		std::cin>>mes;
+	}
+	
+	
+	//Coleta ano de validade
+	std::cout<<std::endl;
+	std::cout<<"Digite o ano validade (2 ultimos digitos): ";          
+	int ano;
+	std::cin>>ano;
+	
+	while (!(verificaAno(ano, cartao))){
+		std::cout<<"Ano invalido! Digite novamente: ";               //TESTCASE
+		std::cin>>ano;
+	}
+	
+	//Coleta cvv
+	std::cout<<std::endl;
+	std::cout<<"Digite o codigo de seguranca do cartao (CVV): ";
+	int codigo;
+	std::cin>>codigo;
+	
+	while (!(verificaCvv(codigo, cartao))){
+		std::cout<<"CVV invalido! Digite novamente: ";            //TESTCASE
+		std::cin>>codigo;
+	}
+	
+	
+	std::cout<<std::endl;
+	std::cout<<"Pagamento aprovado.";
+	std::cout<<std::endl;
+
+	
+}
