@@ -18,8 +18,8 @@ int verificaNumero(long long int num, Cartao& cartao){
 	    return 1;
     }
     else{
-		return 0;
-	}
+            return 0;
+    }
 }
 
 
