@@ -14,19 +14,19 @@ private:
     float valor;
 
 public:
-Bebida();
-Bebida(string _tipo, string _sabor, string _tamanho, float _valor);
-void setTipo(string _tipo);
-void setSabor(string _sabor);
-void setTamanho(string _tamanho);
-void setValor(float _valor);
-string getSabor();
-string getTipo();
-string getTamanho();
-float getValor();
-void imprimeBebida();
-void inicializandoBebida();
- ~Bebida(void); // destrutor
+    Bebida();
+    Bebida(string _tipo, string _sabor, string _tamanho, float _valor);
+    void setTipo(string _tipo);
+    void setSabor(string _sabor);
+    void setTamanho(string _tamanho);
+    void setValor(float _valor);
+    string getSabor();
+    string getTipo();
+    string getTamanho();
+    float getValor();
+    void imprimeBebida();
+    void inicializandoBebida();
+    ~Bebida(void); // destrutor
 };
 
 
