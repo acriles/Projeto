@@ -9,22 +9,22 @@ using namespace std;
 
 int main(){
 
-  //USUÁRIO--------------------------------------------
-  Usuario user({}, {}, {}, {});
-  user.cadastroInicial();
-  user.PossuiCadastro();
-  user.imprimeUsuario();
+//USUÁRIO--------------------------------------------
+    Usuario user({}, {}, {}, {});
+    user.cadastroInicial();
+    user.PossuiCadastro();
+    user.imprimeUsuario();
 
-  //PIZZA----------------------------------------------
+//PIZZA----------------------------------------------
     // Pizza pizza1;
     // pizza1.inicializandoPizza();
 
-  //BEBIDA---------------------------------------------
+//BEBIDA---------------------------------------------
     // Bebida bebida1;
     // bebida1.inicializandoBebida();
 
 
- //CARDAPIO--------------------------------------------
+//CARDAPIO--------------------------------------------
    // Cardapio cardapio;
    // cardapio.inicializarCardapio();
    // cardapio.getPizzas();
