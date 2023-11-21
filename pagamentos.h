@@ -8,7 +8,7 @@
 struct Cartao {
 public:
     string nomeTitular;
-    long long int numeroCartao; // Usando long long int para representar um número de 16 bits
+    long long int numeroCartao;     //Usando long long int para representar um número de 16 bits
     int mesValidade;
     int anoValidade;
     int cvv;
