@@ -3,7 +3,7 @@
 
 //TESTE CASES----------------------------------------------------
 
-//Função que verifica se o número tem 16 dígitos - TESTCASE
+//Função que verifica se o número tem 16 dígitos - TESTCASE----------------------------------------------------
 int verificaNumero(long long int num, Cartao& cartao){
     int cont=0;
     long long int aux=num;
@@ -24,7 +24,7 @@ int verificaNumero(long long int num, Cartao& cartao){
 }
 
 
-//Função que verifica se o mês é válido - TESTCASE
+//Função que verifica se o mês é válido - TESTCASE----------------------------------------------------
 int verificaMes(int m, Cartao& cartao){
     if(m>=1 && m<=12){
             cartao.mesValidade=m;
@@ -37,7 +37,7 @@ int verificaMes(int m, Cartao& cartao){
 }
 
 
-//Função que verifica se o ano é válido - TESTCASE
+//Função que verifica se o ano é válido - TESTCASE----------------------------------------------------
 int verificaAno(int a, Cartao& cartao){
     if(a>=23 && a<=40){     //Supondo que um cartão atual não tenha validade superior ao ano de 2040
             cartao.anoValidade=a;
@@ -50,7 +50,7 @@ int verificaAno(int a, Cartao& cartao){
 }
 
 
-//Função que verifica se o CVV é válido - TESTCASE
+//Função que verifica se o CVV é válido - TESTCASE----------------------------------------------------
 int verificaCvv(int cod, Cartao& cartao){
     int cont=0;
     long long int aux=cod;
@@ -64,7 +64,8 @@ int verificaCvv(int cod, Cartao& cartao){
             cartao.cvv=cod;
             return 1;
     }
-	else{
-		return 0;
-	}
+	    
+    else{
+            return 0;
+    }
 }
