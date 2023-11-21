@@ -7,58 +7,69 @@
 #include <cppconn/statement.h>
 #include <cppconn/resultset.h>
 
+
 using namespace std;
 Usuario::Usuario(){}
-Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs) {
-  cpf = _cpf;
-  nome = _nome;
-  endereco = _endereco;
-  telefone = _telefone;
-  cpfs = _cpfs;
-  // inicializa a classe com campos vazios
+Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs){
+    cpf = _cpf;
+    nome = _nome;
+    endereco = _endereco;
+    telefone = _telefone;
+    cpfs = _cpfs;
+       //Inicializa a classe com campos vazios
 }
+
+
 Usuario::~Usuario(void){ 
-  nome.clear();
-  endereco.clear();
-  cout << "Classe destruida" << endl;
-  }
+    nome.clear();
+    endereco.clear();
+    cout << "Classe destruida" << endl;
+}
+
 
 void Usuario::setNome(string _nome){
-  nome = _nome;
+    nome = _nome;
 }
+
 
 string Usuario::getNome(){
-  return nome;
+    return nome;
 }
+
 
 void Usuario::setTelefone(int _telefone){
-  telefone = _telefone;
+    telefone = _telefone;
 }
+
 
 void Usuario::setCpf(int _cpf){
-  cpf = _cpf;
+    cpf = _cpf;
 }
+
 
 void Usuario::setEndereco(string _endereco){
-  endereco = _endereco;
+    endereco = _endereco;
 }
+
 
 string Usuario::getEndereco(){
-return endereco;
+    return endereco;
 }
 
+
 int Usuario::getTelefone(){
-  return telefone;
+    return telefone;
 }
-     
+
+
 void Usuario::cadastroInicial(){
-  cout << "Digite seu nome" << endl;
-  cin >> nome;
-  cout << "Insira agora seu telefone" << endl;
-  cin >> telefone;
-  cout << "Por ultimo, insira seu cpf" << endl;
-  cin >> cpf;
-  confirmar_Usuario();
+cout << "Digite seu nome" << endl;
+cin >> nome;
+cout << "Insira agora seu telefone" << endl;
+cin >> telefone;
+cout << "Por ultimo, insira seu cpf" << endl;
+cin >> cpf;
+confirmar_Usuario();
 }
 
 void Usuario::confirmar_Usuario(){
