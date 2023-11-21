@@ -123,7 +123,7 @@ void Pagamentos::Dinheiro ()
 }
 
 
-//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------
+//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
 void coletaDadosCartao(Cartao& cartao)
 {
 	//Coleta nome do titular
