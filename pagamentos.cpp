@@ -60,7 +60,7 @@ int verificaCvv(int cod, Cartao& cartao){
             cont++;
     }
 	
-    if(cont==3){             //se tiver 3 dígitos, o CVV digitado é valido, logo podemos armazenar na struct
+    if(cont==3){             //Se tiver 3 dígitos, o CVV digitado é valido. Logo, podemos armazenar na struct
             cartao.cvv=cod;
             return 1;
     }
