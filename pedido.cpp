@@ -5,6 +5,7 @@ using namespace std;
 
 Pedido::Pedido(){
 }
+Pedido::~Pedido(void) { cout << "classe pedido destruida" << endl; }
 
 float Pedido::calcularValorTotal(){
     return 0;
@@ -36,8 +37,16 @@ void Pedido::vetorPizzas(){ //adiciona a primeira pizza inicializada na primeira
     Pizza setPizza;
     setPizza.inicializandoPizza();
     pizzaPedido.push_back(setPizza);
+    cout << "Deseja adicionar outra pizza? Caso sim digite 1, se nao digite 0"
+       << endl;
+  cin >> maisPizza;
+  if (maisPizza == 1) 
+    vetorPizzas();
+  
 }
 
 void Pedido::imprimePedido(){
-    
+     for (int i = 0; i < pizzaPedido.size(); i++)
+    pizzaPedido[i].imprimePizza();
+  cout << endl;
 }
