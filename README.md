@@ -12,7 +12,28 @@ fazer alterações extras nos acréscimos das pizzas selecionadas. </p>
 
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 
-* [Acesso ao Projeto](#acesso-ao-projeto)
+
+* [Acesso ao Projeto](#acesso-ao-projeto) <br>
+Link do projeto para a clonagem: 
+```bash
+  https://github.com/acriles/Projeto.git
+```
+Compilação:
+
+```bash
+  * Necessita-se que seja feita usando WSL*
+  
+  - Abra seu terminal de preferencia onde seja possivel o uso do ambiente Linux
+
+  - Encaminhe para pasta onde foi clonada o programa
+
+  - Use o comando 'make' para realizar a compilação por meio do Makefile. Caso deseje limpar a compilação ja feita, basta dar 'make clean')
+
+  - Após concluida a compilação, digite './main.out'
+  
+  - Quando concluido, o programa estará pronto para uso
+```
+
 
 * [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
   A construção do projeto contou com as seguintes ferramentas: <br>
@@ -22,12 +43,12 @@ fazer alterações extras nos acréscimos das pizzas selecionadas. </p>
 -GithubDesktop: para acesso aos repositórios onlines do github <br>
 
 * [Pessoas Contribuidoras e Desenvolvedoras](#pessoas-contribuidoras) <br>
-Este projeto existe através das contribuições de:
-[<img loading="lazy"> <br><sub>Ana Clara Alves de Faria</sub>](https://github.com/acriles)  
-[<img loading="lazy"> <br><sub>Samuel Antunes Vasconcelos de Morais</sub>](https://github.com/samucavm2)  
-[<img loading="lazy"> <br><sub>Julia Santos Vieira</sub>](https://github.com/juliasvieira)  
-[<img loading="lazy"> <br><sub>Victor Luiz Lima Rodrigues</sub>](https://github.com/vluizlr)  
-[<img loading="lazy"> <br><sub>Luis Filipe Tieres da Silva</sub>](https://github.com/LuisTieres) 
+Este projeto existe através das contribuições de: <br>
+[Ana Clara Alves de Faria](https://github.com/acriles)  
+[Samuel Antunes Vasconcelos de Morais](https://github.com/samucavm2)  
+[Julia Santos Vieira](https://github.com/juliasvieira)  
+[Victor Luiz Lima Rodrigues](https://github.com/vluizlr)  
+[Luis Filipe Tieres da Silva](https://github.com/LuisTieres) 
 
 * [Conclusão](#conclusão) <br> 
 A criação deste projeto foi de extrema importância para o desenvolvimento de habilidades na linguagem de programação C++. Foi possivel o aumento na gama de conhecimento dos desenvolvedores, alem da prática da lógica de programação. Isso permitiu com que os contribuidores pudessem ter a experiência de desenvolver um projeto em grupo, dividindo tarefas e dando auxilio quando necessário. 
