@@ -12,9 +12,6 @@ int main(){
 //USUÁRIO--------------------------------------------
     Usuario user({}, {}, {}, {}, {});
     user.cadastroInicial();
-    user.PossuiCadastro();
-    user.imprimeUsuario();
-
     
 //PIZZA----------------------------------------------
     // Pizza pizza1;
@@ -36,7 +33,7 @@ int main(){
 //PEDIDO----------------------------------------------
     Pedido pedido;
     pedido.vetorPizzas();
-    pedido.imprimePizzas();
+    pedido.imprimePedido();
 
     
 //PAGAMENTO------------------------------------------
