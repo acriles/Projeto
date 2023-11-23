@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Construtores da classe Pizza 
  Pizza::Pizza(){  
  }
 
@@ -13,6 +14,7 @@ using namespace std;
    valor = _valor + (adicionais.size()*2);
  }
 
+//Metodos set e get dos atributos 
 void Pizza::setSabor(string _sabor){
     sabor = _sabor; 
  }
@@ -38,6 +40,7 @@ void Pizza::setSabor(string _sabor){
     valor = valor + 2;
  }
 
+//Imprime os adicionais da pizza
  void Pizza::imprimeAdicionais(){
    if (!adicionais.empty()) {
     cout << "Adicionais";
@@ -48,11 +51,13 @@ void Pizza::setSabor(string _sabor){
    }
  }
 
+//Imprime os atributos colocados na pizza 
  void Pizza::imprimePizza(){
     cout << endl <<"Pizza selecionada" << endl << "Sabor:" << sabor << endl << "Tamanho:" << tamanho << endl;
     imprimeAdicionais();
  }
 
+//Inicializa os atributos da pizza
  void Pizza::inicializandoPizza(){
    int confirma= 1;
   string adicional;
@@ -83,7 +88,7 @@ void Pizza::setSabor(string _sabor){
   }
  }
 
-
+//Destrutor da pizza
  Pizza::~Pizza(void){
     sabor.clear();
     tamanho.clear();
