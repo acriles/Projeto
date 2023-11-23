@@ -8,168 +8,155 @@
 #include <cppconn/resultset.h>
 
 using namespace std;
-//Construtores da classe Usuario 
-Usuario::Usuario(){}
-Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs){
-    cpf = _cpf;
-    nome = _nome;
-    endereco = _endereco;
-    telefone = _telefone;
-    cpfs = _cpfs;
+Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs) {
+  cpf = _cpf;
+  nome = _nome;
+  endereco = _endereco;
+  telefone = _telefone;
+  cpfs = _cpfs;
+  // inicializa a classe com campos vazios
 }
-
-//Destrutor da classe Usuario 
 Usuario::~Usuario(void){ 
-    nome.clear();
-    endereco.clear();
-    cout << "Classe destruida" << endl;
-}
+  nome.clear();
+  endereco.clear();
+  cout << "Classe destruida" << endl;
+  }
 
-//Metodos de set e get 
 void Usuario::setNome(string _nome){
-    nome = _nome;
+  nome = _nome;
 }
 
 string Usuario::getNome(){
-    return nome;
+  return nome;
 }
 
 void Usuario::setTelefone(int _telefone){
-    telefone = _telefone;
+  telefone = _telefone;
 }
 
 void Usuario::setCpf(int _cpf){
-    cpf = _cpf;
+  cpf = _cpf;
 }
 
 void Usuario::setEndereco(string _endereco){
-    endereco = _endereco;
+  endereco = _endereco;
 }
 
 string Usuario::getEndereco(){
-    return endereco;
+return endereco;
 }
 
 int Usuario::getTelefone(){
-    return telefone;
+  return telefone;
 }
-
-//Inicializa os atributos de usuario ---------------------------------------
+     
 void Usuario::cadastroInicial(){
-    cout << "Digite seu nome" << endl;
-    cin >> nome;
-    cout << "Insira agora seu telefone" << endl;
-    cin >> telefone;
-    cout << "Por ultimo, insira seu cpf" << endl;
-    cin >> cpf;
-    confirmar_Usuario();
+  cout << "Digite seu nome" << endl;
+  cin >> nome;
+  cout << "Insira agora seu telefone" << endl;
+  cin >> telefone;
+  cout << "Por ultimo, insira seu cpf" << endl;
+  cin >> cpf;
+  confirmar_Usuario();
 }
 
-//Confirmação do dados
 void Usuario::confirmar_Usuario(){
-    int confimar_dados;
-    int confirmacaoPedido;
+  int confimar_dados;
+  int confirmacaoPedido;
 
-    cout << "Confirmando seus dados: "<< endl 
-    << "Nome:" <<  nome << endl << "Telefone:" << telefone << endl << "Cpf:" << cpf << endl;
+  cout << "Confirmando seus dados: "<< endl 
+<< "Nome:" <<  nome << endl << "Telefone:" << telefone << endl << "Cpf:" << cpf << endl;
 
-    cout << "Digite 1 para confirmar o cadastro e 2 para cancelar.\n\n";
-    
-    int cpf_analise = cpf;
-    cin >> confimar_dados;
+  cout << "Digite 1 para confirmar o cadastro e 2 para cancelar.\n\n";
+
+  int cpf_analise = cpf;
+  cin >> confimar_dados;
   
-    if (confimar_dados  == 1){
-            ler_banco_de_dados();
-            for (int cpf : cpfs){
-                 cout << cpf << " ";
-                 if(cpf == cpf_analise){
-                        cout << "CPF já está cadastrado.\n";
-                        cout << "Reiniciando o cadastro:" << endl;
-                        cadastroInicial();
-                }
-            }
+  if (confimar_dados  == 1){
+    ler_banco_de_dados();
+    for (int cpf : cpfs) {
+        if (cpf == cpf_analise){
+          cout << "CPF já está cadastrado.\n";
+          cout << "Reiniciando o cadastro:" << endl;
+          cadastroInicial();
+        }
+        }
 
     inserir_usuario();
     cout << "Cadastro realizado com sucesso!Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
     cin >> confirmacaoPedido; 
 
-//Confirma se pedido sera feito 
-    if(confirmacaoPedido==1){
-            cout << "Prosseguindo com pedido" <<endl;
-            return;
-    }
+    if (confirmacaoPedido==1){
+      cout << "Prosseguindo com pedido" <<endl;
+      return;
     
-    else{
-            cout << "Ficamos aguardando por você!" <<endl;
+    } else {
+      cout << "Ficamos aguardando por você!" <<endl;
     }
   }
   
   
-    else if(confimar_dados  == 2){
-            cout << "Iniciando Login!" <<endl;
-            Fazer_login();
-    }
-        
-    else{
-            cout << "Você digitou:"<< confimar_dados <<endl;
-            confirmar_Usuario();
-    }
+  else if (confimar_dados  == 2){
+    cout << "Iniciando Login!" <<endl;
+    Fazer_login();
+  
+  }else{
+      cout << "Você digitou:"<< confimar_dados <<endl;
+      confirmar_Usuario();
+  }
   }
 
-//Verifica se Usuario ja é cadastrado 
-    void Usuario::PossuiCadastro(){
-    unsigned cadastro = 0;
-    cout << "Possui cadastro?" << endl
-    << "se sim digite 1, se nao digite 0" << endl;
-    cin >> cadastro;
+void Usuario::PossuiCadastro() {
+  unsigned cadastro = 0;
+  cout << "Possui cadastro?" << endl
+  << "se sim digite 1, se nao digite 0" << endl;
+  cin >> cadastro;
   
-    if(cadastro == 1){
-            Fazer_login();
-            return;
-    } 
-    else{
-            cout << "Iniciando o cadastro:" << endl;
+  if (cadastro == 1) {
+     Fazer_login();
+     return;
+  } else
+    cout << "Iniciando o cadastro:" << endl;
 
-            cadastroInicial();
+    cadastroInicial();
 }
+void Usuario::Fazer_login() {
+  int cpf_l;
+  int confirmacaoPedido;
+  bool continuarLogin = true;
+  bool sucesso_login = false;
+  cout << "Digite seu CPF: ";
+  cin >> cpf_l;
+  ler_banco_de_dados();
+  while (continuarLogin) {
+    for (int cpf : cpfs) {
 
-//Inicializa o login do Usuario ja cadastrado 
-    void Usuario::Fazer_login(){
-    int cpf_l;
-    int confirmacaoPedido;
-    bool continuarLogin = true;
-    bool sucesso_login = false;
-    cout << "Digite seu CPF: ";
-    cin >> cpf_l;
-    ler_banco_de_dados();
-        
-    while(continuarLogin){
-       for(int cpf : cpfs){
-            if(cpf_l == cpf){
-                    cout << "Login realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
-                    cin >> confirmacaoPedido;
-                    sucesso_login = true;
-                    if(confirmacaoPedido == 1){ 
-                             cout << "Prosseguindo com pedido" << endl;
-                             continuarLogin = false;
-                             return;
-                    } 
-                   else if(confirmacaoPedido == 2){
-                              cout << "Ficamos aguardando por você!" << endl;
-                   }
-            }
+      if (cpf_l == cpf) {
+        cout << "Parabéns o login foi realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
+        cin >> confirmacaoPedido; 
+        sucesso_login = true;
+        if (confirmacaoPedido == 1) { 
+          cout << "Prosseguindo com pedido" << endl;
+          continuarLogin = false;
+          break;
+        } 
+        else if (confirmacaoPedido == 2) {
+           cout << "Ficamos aguardando por você!" << endl;
+        }
        }
-        
-        if(continuarLogin && sucesso_login == false){
-                cout << "Cpf incorreto, tente novamente.\n\n";
-                Fazer_login();
+      }
+    if (continuarLogin && sucesso_login == false) {
+      cout << "Cpf incorreto, tente novamente.\n\n";
+      Fazer_login();
         }
    }
 
+
     }
 
-//Inserção do Usuario 
-void Usuario::inserir_usuario(){
+
+
+void Usuario::inserir_usuario() {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
 
@@ -194,7 +181,7 @@ void Usuario::inserir_usuario(){
 
 }
 
-//Recolhe do banco de dados informações do Usuario 
+
 void Usuario::ler_banco_de_dados() {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
@@ -216,16 +203,17 @@ void Usuario::ler_banco_de_dados() {
 
     res = stmt->executeQuery(query);
 
-    while(res->next()){
-            cpf = res->getInt("cpf");
-            nome = res->getString("name");
-            telefone = res->getInt("telefone");
-            endereco = res->getString("endereco");
-            cpfs.push_back(cpf);
+    while (res->next()) {
+        int cpf_analise = res->getInt("cpf");
+        string nome_analise = res->getString("name");
+        int telefone_analise = res->getInt("telefone");
+        string endereco_analise = res->getString("endereco");
+        cpfs.push_back(cpf_analise);
+
     }
 
     delete res;
     delete stmt;
     delete con;
-    
-}
+    }
+
