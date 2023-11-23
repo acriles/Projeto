@@ -7,8 +7,8 @@
 #include <cppconn/statement.h>
 #include <cppconn/resultset.h>
 
-
 using namespace std;
+//Construtores da classe Usuario 
 Usuario::Usuario(){}
 Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs){
     cpf = _cpf;
@@ -16,52 +16,45 @@ Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector
     endereco = _endereco;
     telefone = _telefone;
     cpfs = _cpfs;
-       //Inicializa a classe com campos vazios
 }
 
-
+//Destrutor da classe Usuario 
 Usuario::~Usuario(void){ 
     nome.clear();
     endereco.clear();
     cout << "Classe destruida" << endl;
 }
 
-
+//Metodos de set e get 
 void Usuario::setNome(string _nome){
     nome = _nome;
 }
-
 
 string Usuario::getNome(){
     return nome;
 }
 
-
 void Usuario::setTelefone(int _telefone){
     telefone = _telefone;
 }
-
 
 void Usuario::setCpf(int _cpf){
     cpf = _cpf;
 }
 
-
 void Usuario::setEndereco(string _endereco){
     endereco = _endereco;
 }
-
 
 string Usuario::getEndereco(){
     return endereco;
 }
 
-
 int Usuario::getTelefone(){
     return telefone;
 }
 
-
+//Inicializa os atributos de usuario ---------------------------------------
 void Usuario::cadastroInicial(){
     cout << "Digite seu nome" << endl;
     cin >> nome;
@@ -72,7 +65,7 @@ void Usuario::cadastroInicial(){
     confirmar_Usuario();
 }
 
-
+//Confirmação do dados
 void Usuario::confirmar_Usuario(){
     int confimar_dados;
     int confirmacaoPedido;
@@ -100,6 +93,7 @@ void Usuario::confirmar_Usuario(){
     cout << "Cadastro realizado com sucesso!Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
     cin >> confirmacaoPedido; 
 
+//Confirma se pedido sera feito 
     if(confirmacaoPedido==1){
             cout << "Prosseguindo com pedido" <<endl;
             return;
@@ -122,6 +116,7 @@ void Usuario::confirmar_Usuario(){
     }
   }
 
+//Verifica se Usuario ja é cadastrado 
     void Usuario::PossuiCadastro(){
     unsigned cadastro = 0;
     cout << "Possui cadastro?" << endl
@@ -138,7 +133,7 @@ void Usuario::confirmar_Usuario(){
             cadastroInicial();
 }
 
-
+//Inicializa o login do Usuario ja cadastrado 
     void Usuario::Fazer_login(){
     int cpf_l;
     int confirmacaoPedido;
@@ -173,7 +168,7 @@ void Usuario::confirmar_Usuario(){
 
     }
 
-
+//Inserção do Usuario 
 void Usuario::inserir_usuario(){
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
@@ -199,7 +194,7 @@ void Usuario::inserir_usuario(){
 
 }
 
-
+//Recolhe do banco de dados informações do Usuario 
 void Usuario::ler_banco_de_dados() {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;

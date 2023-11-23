@@ -3,14 +3,19 @@
 
 using namespace std;
 
+//Construtor da classe Pedido 
 Pedido::Pedido(){
 }
+
+//Destrutor da classe 
 Pedido::~Pedido(void) { cout << "classe pedido destruida" << endl; }
 
+//Metodo calcula o valor final 
 float Pedido::calcularValorTotal(){
     return 0;
 }
 
+//Metodos de set e get
 void Pedido::setFormaPagamento(string _formaPagamento){
     formaPagamento = _formaPagamento;
 }
@@ -33,18 +38,30 @@ void Pedido::vetorBebidas(){
     bebidaPedido.push_back(setBebida);
 }
 
-void Pedido::vetorPizzas(){ //adiciona a primeira pizza inicializada na primeira posicao do vetor de pizzas 
+//Metodo que seta os atributos da pizza escolhidos pelo usuario e adiciona-a no pedido das pizzas 
+void Pedido::vetorPizzas(){ 
     Pizza setPizza;
     setPizza.inicializandoPizza();
     pizzaPedido.push_back(setPizza);
-    cout << "Deseja adicionar outra pizza? Caso sim digite 1, se nao digite 0"
+    cout << "Deseja adicionar outra pizza? Caso sim digite 1, senao digite 0"
        << endl;
   cin >> maisPizza;
   if (maisPizza == 1) 
     vetorPizzas();
-  
 }
 
+void Pedido::vetorBebidas(){ 
+    Bebida setBebida;
+    setBebida.inicializandoBebida();
+    bebidaPedido.push_back(setBebida);
+    cout << "Deseja adicionar outra bebida? Caso sim digite 1, senao digite 0"
+       << endl;
+  cin >> maisBebida;
+  if (maisBebida == 1) 
+    vetorBebidas();
+}
+
+//Imprime a pizza escolhida 
 void Pedido::imprimePedido(){
      for (int i = 0; i < pizzaPedido.size(); i++)
     pizzaPedido[i].imprimePizza();
