@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 
 //USUÁRIO--------------------------------------------
-    Usuario user({}, {}, {}, {});
+    Usuario user({}, {}, {}, {}, {});
     user.cadastroInicial();
     user.PossuiCadastro();
     user.imprimeUsuario();
