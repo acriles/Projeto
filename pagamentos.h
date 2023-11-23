@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+using namespace std;
 
 #ifndef PAGAMENTOS_H
 #define PAGAMENTOS_H
