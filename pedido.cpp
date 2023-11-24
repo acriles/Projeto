@@ -10,11 +10,6 @@ Pedido::Pedido(){
 //Destrutor da classe 
 Pedido::~Pedido(void) { cout << "classe pedido destruida" << endl; }
 
-//Metodo calcula o valor final 
-float Pedido::calcularValorTotal(){
-    return 0;
-}
-
 //Metodos de set e get
 void Pedido::setFormaPagamento(string _formaPagamento){
     formaPagamento = _formaPagamento;
@@ -32,6 +27,7 @@ void Pedido::setVetorBebida(vector <Bebida> _bebidaPedido){
     bebidaPedido = _bebidaPedido;
 } 
 
+//Mostrando o cardapio 
 void Pedido:: inicializar_cardapio(){
     cout << "Cardapio de pizzas:"<< endl;
     Cardapio cardapio;
@@ -78,6 +74,8 @@ void Pedido::vetorPizzas(){
     }
 }
 }
+
+//Adiciona ao vetor as bebidas que serao pedidas 
 void Pedido::vetorBebidas(){ 
     Bebida setBebida;
     setBebida.inicializandoBebida();
@@ -88,11 +86,31 @@ void Pedido::vetorBebidas(){
   cin >> maisBebida;
   if (maisBebida == 1) 
     vetorBebidas();
+    else {
+        cout << "Pedido finalizado." << endl;
+    }
 }
 
-//Imprime a pizza escolhida 
+//Imprime pedido e valor total
 void Pedido::imprimePedido(){
-     for (int i = 0; i < pizzaPedido.size(); i++)
+    for (int i = 0; i < pizzaPedido.size(); i++){
     pizzaPedido[i].imprimePizza();
-  cout << endl;
+    }
+    cout << endl;
+    for (int i = 0; i < bebidaPedido.size(); i++){
+    bebidaPedido[i].imprimeBebida();
+    }
+    cout << endl;
+    calcularValorTotal();
+}
+
+//Calcula o valor total do pedido 
+void Pedido::calcularValorTotal(){
+     for (int i = 0; i < pizzaPedido.size(); i++){
+       valorTotal = pizzaPedido[i].getValor() + valorTotal;
+     } 
+     for(int i=0; i< bebidaPedido.size(); i++){
+        valorTotal = bebidaPedido[i].getValor() + valorTotal;
+     }
+     cout << "O valor total do pedido é de: " << valorTotal << " reais" << endl;
 }

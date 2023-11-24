@@ -9,20 +9,22 @@
 #include <cppconn/resultset.h>
 
 using namespace std;
+//Construtor classe Usuario 
 Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf, vector<int> _cpfs) {
   cpf = _cpf;
   nome = _nome;
   endereco = _endereco;
   telefone = _telefone;
   cpfs = _cpfs;
-  // inicializa a classe com campos vazios
 }
+//Destrutor da classe 
 Usuario::~Usuario(void){ 
   nome.clear();
   endereco.clear();
   cout << "Classe destruida" << endl;
   }
 
+//Metodos set e get 
 void Usuario::setNome(string _nome){
   nome = _nome;
 }
@@ -50,7 +52,8 @@ return endereco;
 int Usuario::getTelefone(){
   return telefone;
 }
-     
+
+//Cadastro inicial    
 void Usuario::cadastroInicial(){
   cout << "Digite seu nome" << endl;
   cin >> nome;
@@ -61,6 +64,7 @@ void Usuario::cadastroInicial(){
   confirmar_Usuario();
 }
 
+//Confirmacao de dados 
 void Usuario::confirmar_Usuario(){
   int confimar_dados;
   int confirmacaoPedido;
@@ -107,10 +111,11 @@ void Usuario::confirmar_Usuario(){
   }
   }
 
+//Fazer login, caso ja possua cadastro 
 void Usuario::PossuiCadastro() {
   unsigned cadastro = 0;
   cout << "Possui cadastro?" << endl
-  << "se sim digite 1, se nao digite 0" << endl;
+  << "Se sim digite 1, senao digite 0" << endl;
   cin >> cadastro;
   
   if (cadastro == 1) {
@@ -118,9 +123,10 @@ void Usuario::PossuiCadastro() {
      return;
   } else
     cout << "Iniciando o cadastro:" << endl;
-
     cadastroInicial();
 }
+
+//Fazer login 
 void Usuario::Fazer_login() {
   int cpf_l;
   int confirmacaoPedido;

@@ -10,22 +10,23 @@ class Bebida {
 private:
     string sabor;
     string tipo;
-    string tamanho;
+    int tamanho;
     float valor;
 
 public:
     Bebida();
-    Bebida(string _tipo, string _sabor, string _tamanho, float _valor);
+    Bebida(string _tipo, string _sabor, int _tamanho, float _valor);
     void setTipo(string _tipo);
     void setSabor(string _sabor);
-    void setTamanho(string _tamanho);
+    void setTamanho(int _tamanho);
     void setValor(float _valor);
     string getSabor();
     string getTipo();
-    string getTamanho();
+    int getTamanho();
     float getValor();
     void imprimeBebida();
     void inicializandoBebida();
+    void calcularPreco();
     ~Bebida(void); // destrutor
 };
 

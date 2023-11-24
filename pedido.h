@@ -7,16 +7,14 @@
 
 class Pedido{
 private:
-    float valorTotal; //valor de entrega, pizza e bebida 
+    float valorTotal=0; //valor de entrega, pizza e bebida 
     string formaPagamento;
     string endereco;
-    // Pizza setPizza; //tipo pizza que monta a primeira pizza, variavel que sera adicionada no vetor de pizzas 
-    // Bebida setBebida;
     vector <Pizza> pizzaPedido; //vetor de pizzas que o usuario vai pedir, a cada posicao desse vetor eu adiciono uma pedidoPizza
     vector <Bebida> bebidaPedido; //vetor de bebidas que o usuario vai pedir 
 public: 
     Pedido();
-    float calcularValorTotal();
+    void calcularValorTotal();
     void setFormaPagamento(string _formaPagamento);
     string getFormaPagamento();
     void setVetorPizza(vector <Pizza> _pizzaPedido);

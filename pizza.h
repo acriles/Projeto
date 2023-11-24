@@ -9,24 +9,24 @@ using namespace std;
 class Pizza{
 private:
     string sabor;
-    string tamanho;
+    int tamanho;
     float valor; 
     vector <string> adicionais;
 
 public:
-    Pizza();     //Construtor 
-    Pizza(string _sabor, string _tamanho, vector <string> _adicionais, float _valor);
+    Pizza();     //Construtor
+    Pizza(string _sabor, int _tamanho, vector<string> _adicionais, float _valor);
     void setSabor(string _sabor);
-    void setTamanho(float _valor);
-    void setTamanho(string _tamanho);
+    void setTamanho(int _tamanho);
     string getSabor();
-    string getTamanho();
+    int getTamanho();
     float getValor();
     void addAdicional(string _adicional);
     void setAdicionais(vector <string> _adicionais); 
     void imprimePizza();
     void imprimeAdicionais();
     void inicializandoPizza();
+    void calculaPreco();
     ~Pizza(void); //destrutor 
    
 };
