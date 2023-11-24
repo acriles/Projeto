@@ -1,6 +1,7 @@
 #include <iostream>
 #include "usuario.h"
 #include "cardapio.h"
+#include "pedido.h"
 
 #include <mysql_driver.h>
 #include <mysql_connection.h>
@@ -133,12 +134,13 @@ void Usuario::Fazer_login() {
 
       if (cpf_l == cpf) {
         cout << "Parabéns o login foi realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite 2.\n\n";
-        cin >> confirmacaoPedido; 
+        cin >> confirmacaoPedido;
         sucesso_login = true;
         if (confirmacaoPedido == 1) { 
           cout << "Prosseguindo com pedido" << endl;
           continuarLogin = false;
-          break;
+          Pedido pedido;
+          pedido.inicializar_cardapio();
         } 
         else if (confirmacaoPedido == 2) {
            cout << "Ficamos aguardando por você!" << endl;
@@ -216,4 +218,3 @@ void Usuario::ler_banco_de_dados() {
     delete stmt;
     delete con;
     }
-
