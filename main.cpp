@@ -11,8 +11,8 @@ int main(){
 
 //USUÁRIO--------------------------------------------
     Usuario user({}, {}, {}, {}, {});
-    user.cadastroInicial();
-    
+    user.PossuiCadastro();
+
 //PIZZA----------------------------------------------
     // Pizza pizza1;
     // pizza1.inicializandoPizza();
@@ -31,15 +31,15 @@ int main(){
 
 
 //PEDIDO----------------------------------------------
-    Pedido pedido;
-    pedido.vetorPizzas();
-    pedido.imprimePedido();
+    //Pedido pedido;
+    //pedido.vetorPizzas();
+    //pedido.imprimePedido();
 
     
 //PAGAMENTO------------------------------------------
     // Pagamentos pagamentos;
     	
-    // int opcaoPagamento = imprimeFormasPagamento();
+    // int opcaoPagamento = pagamentos.imprimeFormasPagamento();
     	
     // while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
     //         std::cout<<std::endl;
@@ -60,11 +60,11 @@ int main(){
     // 		break;
     		
     // 		case 3:
-    // 		coletaDadosCartao(pagamentos.cartaoCred);
+    // 		pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
     // 		break;
     		
     // 		case 4:
-    // 		coletaDadosCartao(pagamentos.cartaoDeb);
+    // 		pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
     // 		break;
     // }
     	
@@ -73,6 +73,5 @@ int main(){
     // std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
     // std::cout<<std::endl;
 
-    
-    return 0;   
+    return 0;
  }
