@@ -24,6 +24,7 @@ public:
     void vetorBebidas(); //funcao que incializa o vetor com as bebidas que serao pedidas 
     void vetorPizzas(); //funcao que inicializa o vetor com as pizzas que serao pedidas 
     void imprimePedido();
+    void inicializar_cardapio();
  ~Pedido(void);
 };
 #endif
