@@ -22,9 +22,11 @@ void Cardapio::inicializarCardapio(){
 }
 
 void Cardapio::getPizzas(){
-     cout << "Pizzas" << endl;
+     cout << ""<< endl;
     for (int i=0; i<pizzas.size(); i++){
          pizzas[i].imprimePizza();
+         cout << endl;
+
     }
     cout << endl;
 }
@@ -33,6 +35,7 @@ void Cardapio::getBebidas(){
     cout <<"Bebidas"<< endl;
      for (int i=0; i<bebidas.size(); i++){
          bebidas[i].imprimeBebida();
+         cout << endl;
     }
     cout << endl;
 
