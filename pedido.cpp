@@ -40,6 +40,7 @@ void Pedido::vetorBebidas(){
 
 //Metodo que seta os atributos da pizza escolhidos pelo usuario e adiciona-a no pedido das pizzas 
 void Pedido::vetorPizzas(){ 
+    int maisPizza;
     Pizza setPizza;
     setPizza.inicializandoPizza();
     pizzaPedido.push_back(setPizza);
@@ -51,6 +52,7 @@ void Pedido::vetorPizzas(){
 }
 
 void Pedido::vetorBebidas(){ 
+    int maisBebida;
     Bebida setBebida;
     setBebida.inicializandoBebida();
     bebidaPedido.push_back(setBebida);
