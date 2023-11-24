@@ -60,5 +60,4 @@ Bebida::~Bebida(void){
     sabor.clear();
     tipo.clear();
     tamanho.clear();
-    cout << "Classe destruida" << endl;
 }
