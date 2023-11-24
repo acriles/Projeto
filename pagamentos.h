@@ -1,5 +1,7 @@
 #include <string>
 #include <iostream>
+#include <cstdio>
+
 using namespace std;
 
 #ifndef PAGAMENTOS_H
@@ -22,6 +24,8 @@ public:
     Cartao cartaoDeb;
     void PIX();
     void Dinheiro();
+    void coletaDadosCartao();
+    int imprimeFormasPagamento(Cartao cartao);
 };
 
 #endif
