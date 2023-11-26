@@ -1,49 +1,30 @@
+#ifndef PEDIDO_H
+#define PEDIDO_H
+#include "pizza.h"
+#include "bebida.h"
 #include <string>
 #include <vector>
-using namespace std;
 
-#ifndef PIZZA_H
-#define PIZZA_H
-
-class Pizza{
-    private:
-     string sabor;
-     string tamanho;
-     float valor; 
-     vector <string> adicionais;
-     string codigo;
-
-    public:
-     Pizza(); //construtor 
-     Pizza(string _codigo,string _sabor, string _tamanho, vector <string> _adicionais, float _valor);
-     string getCodigo() const {
-        return codigo;
-    }
-    string getSabor() const {
-        return sabor;
-    }
-    string getTamanho() const {
-        return tamanho;
-    }
-    float getValor() const {
-    return valor;
-    }
-    vector <string> getAdicionais() const {
-        return adicionais;
-    }
-
-     void setSabor(string _sabor);
-     void setTamanho(float _valor);
-     void setTamanho(string _tamanho);
-     string getSabor();
-     string getTamanho();
-     float getValor();
-     void addAdicional(string _adicional);
-    void setAdicionais(vector <string> _adicionais); 
-    void imprimePizza();
-    void imprimeAdicionais();
-    void inicializandoPizza();
-      ~Pizza(void); //destrutor 
-   
+class Pedido{
+private:
+    float valorTotal; //valor de entrega, pizza e bebida 
+    string formaPagamento;
+    string endereco;
+    // Pizza setPizza; //tipo pizza que monta a primeira pizza, variavel que sera adicionada no vetor de pizzas 
+    // Bebida setBebida;
+    vector <Pizza> pizzaPedido; //vetor de pizzas que o usuario vai pedir, a cada posicao desse vetor eu adiciono uma pedidoPizza
+    vector <Bebida> bebidaPedido; //vetor de bebidas que o usuario vai pedir 
+public: 
+    Pedido();
+    float calcularValorTotal();
+    void setFormaPagamento(string _formaPagamento);
+    string getFormaPagamento();
+    void setVetorPizza(vector <Pizza> _pizzaPedido);
+    void setVetorBebida(vector <Bebida> _bebidaPedido); 
+    void vetorBebidas(); //funcao que incializa o vetor com as bebidas que serao pedidas 
+    void vetorPizzas(); //funcao que inicializa o vetor com as pizzas que serao pedidas 
+    void imprimePedido();
+    void inicializar_cardapio();
+ ~Pedido(void);
 };
-#endif // PIZZA_H
+#endif
