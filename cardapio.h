@@ -14,4 +14,7 @@ class Cardapio{
     void inicializarCardapio(); //o administrador consegue inicializar o cardapio conforme quiser 
     void getPizzas(); //mostra as pizzas do cardapio
     void getBebidas(); //mostra as bebidas do cardapio
+
+    bool confirmar_codigo(string codigo);
+    void pedidos(string codigo, string& _sabor, string& _tamanho, vector<string>& _adicionais, float& _valor) ;
 };
