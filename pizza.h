@@ -5,30 +5,45 @@ using namespace std;
 #ifndef PIZZA_H
 #define PIZZA_H
 
-
 class Pizza{
-private:
-    string sabor;
-    int tamanho;
-    float valor; 
-    vector <string> adicionais;
+    private:
+     string sabor;
+     string tamanho;
+     float valor; 
+     vector <string> adicionais;
+     string codigo;
 
-public:
-    Pizza();     //Construtor
-    Pizza(string _sabor, int _tamanho, vector<string> _adicionais, float _valor);
-    void setSabor(string _sabor);
-    void setTamanho(int _tamanho);
-    string getSabor();
-    int getTamanho();
-    float getValor();
-    void addAdicional(string _adicional);
+    public:
+     Pizza(); //construtor 
+     Pizza(string _codigo,string _sabor, string _tamanho, vector <string> _adicionais, float _valor);
+     string getCodigo() const {
+        return codigo;
+    }
+    string getSabor() const {
+        return sabor;
+    }
+    string getTamanho() const {
+        return tamanho;
+    }
+    float getValor() const {
+    return valor;
+    }
+    vector <string> getAdicionais() const {
+        return adicionais;
+    }
+
+     void setSabor(string _sabor);
+     void setTamanho(float _valor);
+     void setTamanho(string _tamanho);
+     string getSabor();
+     string getTamanho();
+     float getValor();
+     void addAdicional(string _adicional);
     void setAdicionais(vector <string> _adicionais); 
     void imprimePizza();
     void imprimeAdicionais();
     void inicializandoPizza();
-    void calculaPreco();
-    ~Pizza(void); //destrutor 
+      ~Pizza(void); //destrutor 
    
 };
-
-#endif
+#endif // PIZZA_H
