@@ -2,6 +2,7 @@
 #define PEDIDO_H
 #include "pizza.h"
 #include "bebida.h"
+#include "cardapio.h"
 #include <string>
 #include <vector>
 
@@ -22,7 +23,7 @@ public:
     void setVetorPizza(vector <Pizza> _pizzaPedido);
     void setVetorBebida(vector <Bebida> _bebidaPedido); 
     void vetorBebidas(); //funcao que incializa o vetor com as bebidas que serao pedidas 
-    void vetorPizzas(); //funcao que inicializa o vetor com as pizzas que serao pedidas 
+    void vetorPizzas(Cardapio _cardapio); //funcao que inicializa o vetor com as pizzas que serao pedidas 
     void imprimePedido();
  ~Pedido(void);
 };

@@ -4,12 +4,15 @@
 //Construtores classe Bebida 
 Bebida::Bebida(){
 }
-Bebida::Bebida(string _tipo, string _sabor, string _tamanho, float _valor){
-    tipo = _tipo;
-    sabor = _sabor;
-    tamanho = _tamanho;
-    valor = _valor;
+Bebida::Bebida(string _tipo, string _sabor, string _tamanho, float _valor,
+               int _indice) {
+  tipo = _tipo;
+  sabor = _sabor;
+  tamanho = _tamanho;
+  valor = _valor;
+  indice = _indice;
 }
+
 
 //Metodos set e get 
 void Bebida::setSabor(string _sabor){

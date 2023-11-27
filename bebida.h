@@ -12,10 +12,11 @@ private:
     string tipo;
     string tamanho;
     float valor;
+    int indice;
 
 public:
     Bebida();
-    Bebida(string _tipo, string _sabor, string _tamanho, float _valor);
+    Bebida(string _tipo, string _sabor, string _tamanho, float _valor, int _indice);
     void setTipo(string _tipo);
     void setSabor(string _sabor);
     void setTamanho(string _tamanho);
