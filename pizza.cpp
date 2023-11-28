@@ -61,9 +61,9 @@ void Pizza::setSabor(string _sabor){
     cin >> codigo;
 
     Cardapio cardapio;
-    if (cardapio.confirmar_codigo(codigo)) {
+    if (cardapio.confirmar_codigo_pizza(codigo)) {
         Cardapio cardapio;
-        cardapio.pedidos(codigo, sabor, tamanho, adicionais, valor); 
+        cardapio.pedidosPizza(codigo, sabor, tamanho, adicionais, valor); 
         cout << "Deseja adicionar acréscimos? Caso sim, digite 1, caso contrário, digite 2" << endl;
         cin >> confirma;
 

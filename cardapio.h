@@ -11,10 +11,13 @@ class Cardapio{
     vector <Pizza> pizzas; //vetor com o tipo pizza (sabor, tamanho..) em cada posicao 
     vector <Bebida> bebidas; //vetor com o tipo bebida 
     public:
-    void inicializarCardapio(); //o administrador consegue inicializar o cardapio conforme quiser 
+    void inicializarCardapioPizza(); //o administrador consegue inicializar o cardapio conforme quiser 
+ void inicializarCardapioBebida(); 
     void getPizzas(); //mostra as pizzas do cardapio
     void getBebidas(); //mostra as bebidas do cardapio
 
-    bool confirmar_codigo(string codigo);
-    void pedidos(string codigo, string& _sabor, string& _tamanho, vector<string>& _adicionais, float& _valor) ;
+    bool confirmar_codigo_pizza(string codigo);
+    bool confirmar_codigo_bebida(string codigo);
+    void pedidosPizza(string codigo, string& _sabor, string& _tamanho,       vector<string>& _adicionais, float& _valor) ;
+ void pedidosBebida(string codigo, string& _sabor, string& _tamanho, float& _valor);
 };
