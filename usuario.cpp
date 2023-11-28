@@ -56,7 +56,7 @@ void Usuario::cadastroInicial(){
   cin >> nome;
   cout << "Insira agora seu telefone" << endl;
   cin >> telefone;
-  cout << "Por ultimo, insira seu cpf" << endl;
+  cout << "Por ultimo, insira seu CPF" << endl;
   cin >> cpf;
   confirmar_Usuario();
 }
