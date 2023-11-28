@@ -18,11 +18,6 @@ int main(){
     pedido.vetorPizzas();
     pedido.imprimePedido();
 
-    
-// //PAGAMENTO------------------------------------------
-    Pagamentos pagamentos;
-    pagamentos.imprimeFormasPagamento();
-    	
    
     return 0;   
  }
