@@ -1,9 +1,9 @@
 #include "pagamentos.h"
 #include <iostream>
 
-//TESTCASES----------------------------------------------------
+//TRATAMENTOS DE EXCEÇÃO----------------------------------------------------
 
-//Função que verifica se o número tem 16 dígitos - TESTCASE----------------------------------------------------
+//Função que verifica se o número tem 16 dígitos ----------------------------------------------------
 int verificaNumero(long long int num, Cartao& cartao){
     int cont=0;
     long long int aux=num;
@@ -24,7 +24,7 @@ int verificaNumero(long long int num, Cartao& cartao){
 }
 
 
-//Função que verifica se o mês é válido - TESTCASE----------------------------------------------------
+//Função que verifica se o mês é válido -----------------------------------------------------
 int verificaMes(int m, Cartao& cartao){
     if(m>=1 && m<=12){
             cartao.mesValidade=m;
@@ -37,7 +37,7 @@ int verificaMes(int m, Cartao& cartao){
 }
 
 
-//Função que verifica se o ano é válido - TESTCASE----------------------------------------------------
+//Função que verifica se o ano é válido----------------------------------------------------
 int verificaAno(int a, Cartao& cartao){
     if(a>=23 && a<=40){     //Supondo que um cartão atual não tenha validade superior ao ano de 2040
             cartao.anoValidade=a;
@@ -50,8 +50,9 @@ int verificaAno(int a, Cartao& cartao){
 }
 
 
-//Função que verifica se o CVV é válido - TESTCASE----------------------------------------------------
-int verificaCvv(int cod, Cartao& cartao){
+//Função que verifica se o CVV é válido -----------------------------------------------------
+int verificaCvv(int cod, Cartao& cartao)
+{
     int cont=0;
     long long int aux=cod;
 	
@@ -71,10 +72,11 @@ int verificaCvv(int cod, Cartao& cartao){
 }
 
 
-//Métodos----------------------------------------------------
+//MÉTODOS DA CLASSE----------------------------------------------------
 
-//Função para que o usuário selecione a forma de pagamento----------------------------------------------------
-int imprimeFormasPagamento(){
+//Método para que o usuário selecione a forma de pagamento----------------------------------------------------
+int Pagamentos::imprimeFormasPagamento()
+{
     std::cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<std::endl;
     std::cout<<std::endl;
     std::cout<<"1. Pix"<<std::endl;
@@ -87,18 +89,50 @@ int imprimeFormasPagamento(){
     std::cout<< "Forma de pagamento: ";
     std::cin >> pagamento;
 	
-    return pagamento;
+	Pagamentos pagamentos;
+	
+   
+	while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
+				std::cout<<std::endl;
+				std::cout<< "OPCAO INVALIDA! Digite novamente: ";
+				std::cin>>pagamento;			
+		}
+
+
+		switch (pagamento){
+				case 1:
+				pagamentos.PIX();
+				break;
+				
+				case 2:
+				pagamentos.Dinheiro();
+				break;
+				
+				case 3:
+				pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
+				break;
+				
+				case 4:
+				pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
+				break;
+		}
+			
+			
+		std::cout<<std::endl;
+		std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
+		std::cout<<std::endl;
+
 }
 
 
-//Função caso a forma de pagamento seja via PIX (1)----------------------------------------------------
+//Método caso a forma de pagamento seja via PIX (1)----------------------------------------------------
 void Pagamentos::PIX ()
 {
     std::cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<std::endl;
 }
 
 
-//Função caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
+//Método caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
 void Pagamentos::Dinheiro ()
 {
     std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
@@ -123,8 +157,8 @@ void Pagamentos::Dinheiro ()
 }
 
 
-//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
-void coletaDadosCartao(Cartao& cartao)
+//Método caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
+void Pagamentos::coletaDadosCartao(Cartao& cartao)
 {
 //Coleta nome do titular
     std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
