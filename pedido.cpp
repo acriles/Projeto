@@ -35,7 +35,7 @@ void Pedido::setVetorBebida(vector <Bebida> _bebidaPedido){
 void Pedido:: inicializar_cardapio(){
     cout << "Cardapio de pizzas:"<< endl;
     Cardapio cardapio;
-    cardapio.inicializarCardapio();
+    cardapio.inicializarCardapioPizza();
     cardapio.getPizzas();
     int escolha;
     cout << "Digite 1 para escolhar uma pizza e 2 para ver o cardapio de bebidas"<< endl;
@@ -73,7 +73,7 @@ void Pedido::vetorPizzas(){
     cin >> adicao_bebida;
     if (adicao_bebida == 1){
         Cardapio cardapio;
-        cardapio.inicializarCardapio();        
+        cardapio.inicializarCardapioBebida();        
         cardapio.getBebidas();
         vetorBebidas();
     }
