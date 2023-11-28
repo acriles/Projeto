@@ -31,6 +31,7 @@ public:
     void Dinheiro();
 
 ///@brief Imprime as formas de pagamento para o usuário escolher qual deseja
+///@return o numero correspondente à forma de pagamento escolhida
     int imprimeFormasPagamento();
 
 ///@brief Coleta os dados do cartão (nome do titular, número do cartao, validade e cvv) 
@@ -38,8 +39,8 @@ public:
 ///@param cartao Struct que contém os dados do cartão a serem armazenados
     void coletaDadosCartao (Cartao& cartao);
 	
-    Cartao cartaoCred;
-    Cartao cartaoDeb;
+    Cartao cartaoCred;      // Dados do cartao de credito
+    Cartao cartaoDeb;       // Dados do cartao de debito
 };
 
 #endif
