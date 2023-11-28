@@ -51,7 +51,8 @@ int verificaAno(int a, Cartao& cartao){
 
 
 //Função que verifica se o CVV é válido -----------------------------------------------------
-int verificaCvv(int cod, Cartao& cartao){
+int verificaCvv(int cod, Cartao& cartao)
+{
     int cont=0;
     long long int aux=cod;
 	
@@ -125,7 +126,7 @@ void Pagamentos::Dinheiro ()
 
 
 //Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
-void coletaDadosCartao(Cartao& cartao)
+void Pagamentos::coletaDadosCartao(Cartao& cartao)
 {
 //Coleta nome do titular
     std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
