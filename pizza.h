@@ -6,15 +6,19 @@ using namespace std;
 #define PIZZA_H
 
 class Pizza{
-    private:
-     string sabor;
-     string tamanho;
-     float valor; 
-     vector <string> adicionais;
-     string codigo;
+private:
+     string sabor;                         // Sabor da pizza
+     string tamanho;                      // Tamanho da pizza
+     float valor;                        // Valor da pizza
+     vector <string> adicionais;        // Vetor de adicionais da pizza
+     string codigo;                    // Codigo de identificacao da pizza
 
-    public:
-     Pizza(); //construtor 
+public:
+///@brief Construtor da classe Pizza
+     Pizza(); 
+
+///@brief Construtor que inicializa os membros da classe
+///@param _codigo Codigo de identificacao da pizza
      Pizza(string _codigo,string _sabor, string _tamanho, vector <string> _adicionais, float _valor);
      string getCodigo() const {
         return codigo;
