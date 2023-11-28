@@ -1,5 +1,6 @@
 #include "bebida.h"
 #include <iostream>
+#include "cardapio.h"
 
 //Construtores classe Bebida 
 Bebida::Bebida(){
