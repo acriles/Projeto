@@ -1,31 +1,77 @@
 #include <string>
-using namespace std;
 #include <vector>
 
+using namespace std;
+
 class Usuario{
-    private:
-     string nome;
-     string endereco;
-     int telefone;
-     int cpf;
-     vector<int> cpfs;
+private:
+     string nome;                //Nome do usuario
+     string endereco;            //Endereço do usuario
+     int telefone;               //Telefone do usuario
+     int cpf;                    //CPF do usuario
+     vector<int> cpfs;           //Vetor que contempla os CPFs cadastrados para acesso futuro 
 
 
-    public:
-     Usuario(); //construtor 
+public:
+///@brief Construtor da classe Usuario
+     Usuario(); 
+
+///@brief Inicializa os membros da classe
+///@param _nome Nome do usuario
+///@param _endereco Endereço do usuario
+///@param _telefone Telefone do usuario
+///@param _cpf CPF do usuario
+///@param _cpfs Vetor de CPFs cadastrados
      Usuario(string _nome, string _endereco, int _telefone, int _cpf,vector<int> _cpfs);
+
+///@brief Realiza o cadastro do usuario
      void cadastroInicial();
+
+///@brief Define o nome do usuario
+///@param _nome Nome do usuario
      void setNome(string _nome);
+
+///@brief Define o enderço do usuario
+///@param _endereco Endereço do usuario
      void setEndereco(string _endereco);
-     string getEndereco();
-     string getNome();
+
+///@brief Define o numero de telefone do usuario
+///@param _telefone Telefone do usuario
      void setTelefone(int _telefone);
-     int getTelefone();
+
+///@brief Define o numero de CPF do usuario
+///@param _cpf CPF do usuario
      void setCpf(int _cpf);
+
+///@brief Obtem o enderço do usuario
+///@return Endereco do usuario
+     string getEndereco();
+
+///@brief Obtem o nome do usuario
+///@return Nome do usuario
+     string getNome();
+
+///@brief Obtem o numero de telefone do usuario
+///@return Numero de telefone do usuario
+     int getTelefone();
+
+///@brief Confirma o cadastro do usuario
      void confirmar_Usuario();
-     void Fazer_login();
+
+
+///@brief Verifica se o usuario já possui cadastro
      void PossuiCadastro();
-      ~Usuario(void); //destrutor 
+
+///@brief Realiza o login do usuario já cadastrado
+     void Fazer_login();
+
+///@brief Insere o usuario cadastrado no banco de dados
      void inserir_usuario();
+
+///@brief Lê o banco de dados de usuarios cadastrados
      void ler_banco_de_dados(); 
+
+///@brief Destrutor da classe Usuario
+      ~Usuario(void); //destrutor 
+
 };
