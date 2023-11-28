@@ -20,7 +20,7 @@ public:
 
 ///@brief Inicializa os membros da classe
 ///@param _codigo Codigo utilizado para identificar cada bebida
-///@param _tipo Tipo de bebida
+///@param _tipo Tipo de bebida - refrigerante ou suco
 ///@param _sabor Sabor da bebida
 ///@param _tamanho Tamanho da bebida
 ///@param _valor Valor da bebida escolhida
@@ -34,16 +34,41 @@ public:
     }//nao apareceu o commit
 
 ///@brief Define o tipo da bebida
-///
+///@param _tipo Novo tipo de bebida
     void setTipo(string _tipo);
+
+///@brief Define o sabor da bebida
+///@param _tipo Novo sabor de bebida
     void setSabor(string _sabor);
+
+///@brief Define o tamanho da bebida
+///@param _tipo Novo tamamho de bebida
     void setTamanho(string _tamanho);
+
+///@brief Define o valor da bebida
+///@param _tipo Novo valor de bebida
     void setValor(float _valor);
+
+///@brief Obtem o sabor da bebida escolhida
+///@return Sabor da bebida
     string getSabor();
+
+///@brief Obtem o tipo da bebida escolhida
+///@return Tipo da bebida
     string getTipo();
+
+///@brief Obtem o tamanho da bebida escolhida
+///@return Tamanho da bebida
     string getTamanho();
+
+///@brief Obtem o valor da bebida escolhida
+///@return Valor da bebida
     float getValor();
+
+///@brief Imprime as informações sobre a bebida
     void imprimeBebida();
+
+///@brief Inicializa os parâmetros da bebida
     void inicializandoBebida();
     ~Bebida(void); // destrutor
 };
