@@ -25,9 +25,16 @@ public:
 ///@param _tamanho Tamanho da bebida
 ///@param _valor Valor da bebida escolhida
     Bebida(string _codigo ,string _tipo, string _sabor, string _tamanho, float _valor);
-    string getCodigo() const {
+
+///@brief Obtem o codigo de identificação da bebida
+///@return Codigo da bebida
+    string getCodigo() const 
+    {
     return codigo;
     }//nao apareceu o commit
+
+///@brief Define o tipo da bebida
+///
     void setTipo(string _tipo);
     void setSabor(string _sabor);
     void setTamanho(string _tamanho);
