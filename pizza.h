@@ -7,11 +7,11 @@ using namespace std;
 
 class Pizza{
     private:
-     string sabor;
-     string tamanho;
-     float valor; 
-     vector <string> adicionais;
-     string codigo;
+     string sabor;                   //sabor da pizza
+     string tamanho;                //tamanho da pizza
+     float valor;                  //valor da pizza
+     vector <string> adicionais;  //lista de adicionais de pizza
+     string codigo;              // codigo de identificacao da pizza
 
     public:
      Pizza(); //construtor 
