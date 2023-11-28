@@ -48,12 +48,14 @@ void Bebida::imprimeBebida(){
 
 //Inicializa os atributos de bebida 
 void Bebida::inicializandoBebida(){
-    cout << "Qual o tipo de bebida você deseja?" << endl;
-    cin >> tipo;
-    cout << "Digite o sabor" << endl;
-    cin >> sabor;
-    cout << "Digite o tamanho" << endl;
-    cin >> tamanho;
+  cout << "Digite o código da Bebida:" << endl;
+  cin >> codigo;
+  Cardapio cardapio;
+  if (cardapio.confirmar_codigo_bebida(codigo)) {
+    cardapio.pedidosBebida(codigo, sabor, tamanho, valor);
+  } else {
+    cout << "Comando invalido! " << endl;
+  }
 }
 
 //Destrutor da classe
