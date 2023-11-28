@@ -15,7 +15,15 @@ private:
     string codigo;
 
 public:
+///@brief Construtor da classe
     Bebida();
+
+///@brief Inicializa os membros da classe
+///@param _codigo Codigo utilizado para identificar cada bebida
+///@param _tipo Tipo de bebida
+///@param _sabor Sabor da bebida
+///@param _tamanho Tamanho da bebida
+///@param _valor Valor da bebida escolhida
     Bebida(string _codigo ,string _tipo, string _sabor, string _tamanho, float _valor);
     string getCodigo() const {
     return codigo;
