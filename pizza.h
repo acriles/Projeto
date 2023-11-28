@@ -5,6 +5,7 @@ using namespace std;
 #ifndef PIZZA_H
 #define PIZZA_H
 
+
 class Pizza{
 private:
      string sabor;                   //sabor da pizza
@@ -13,6 +14,7 @@ private:
      vector <string> adicionais;  //lista de adicionais de pizza
      string codigo;              // codigo de identificacao da pizza
 
+  
 public:
 
 //@brief Construtor da classe Pizza
@@ -56,6 +58,7 @@ public:
         return adicionais;
     }
 
+  
 
 
 ///@brief Define o sabor da pizza
@@ -78,9 +81,11 @@ public:
 ///@param _sabor Nova lista de adicionais
 	void setAdicionais(vector <string> _adicionais); 
 	
+  
+  
 ///@brief Imprime as informações da pizza
     void imprimePizza();
-
+  
 ///@brief Imprime o vetor de adicionais da pizza
 	 void imprimeAdicionais();
 

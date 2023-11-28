@@ -42,7 +42,7 @@ public:
     void setSabor(string _sabor);
 
 ///@brief Define o tamanho da bebida
-///@param _tipo Novo tamamho de bebida
+///@param _tipo Novo tamanho de bebida
     void setTamanho(string _tamanho);
 
 ///@brief Define o valor da bebida
