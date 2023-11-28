@@ -8,11 +8,11 @@ using namespace std;
 
 class Bebida {
 private:
-    string sabor;
-    string tipo;
-    string tamanho;
-    float valor;
-    string codigo;
+    string sabor;    //sabor da bebida
+    string tipo;     //tipo da bebida
+    string tamanho;  //tamanho da bebida
+    float valor;     //valor da bebida
+    string codigo;   //codigo de identificacao da bebida
 
 public:
 ///@brief Construtor da classe
