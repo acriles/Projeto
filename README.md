@@ -3,8 +3,8 @@
 <h3>Descrição do Projeto<br></h3>
  <p> O projeto tem como objetivo a criação de uma plataforma para uma pizzaria delivery, que tem como principal função a realização 
 de um pedido remotamente, atráves de uma interface. Nela o usuário poderá realizar seu cadastro e obter sua própria conta, inserindo 
-dados pessoais para sua identificação. Para fazer acesso a conta de usuário é necessária a utilização do email de cadastro e cpf. Além 
-disso, pela interface o cliente poderá selecionar o que pedirá, podendo escolher as mais variadas pizzas e bebidas, sendo possivel tambem 
+dados pessoais para sua identificação. Para fazer acesso à conta de usuário é necessária a utilização do e-mail de cadastro e CPF. Além 
+disso, pela interface o cliente poderá selecionar o que irá pedir, podendo escolher as mais variadas pizzas e bebidas, sendo possível também 
 fazer alterações extras nos acréscimos das pizzas selecionadas. </p>
 
 * [Status do Projeto](#status-do-Projeto)
