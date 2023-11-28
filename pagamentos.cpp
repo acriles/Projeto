@@ -72,9 +72,9 @@ int verificaCvv(int cod, Cartao& cartao)
 }
 
 
-//Métodos----------------------------------------------------
+//MÉTODOS DA CLASSE----------------------------------------------------
 
-//Função para que o usuário selecione a forma de pagamento----------------------------------------------------
+//Método para que o usuário selecione a forma de pagamento----------------------------------------------------
 int Pagamentos::imprimeFormasPagamento()
 {
     std::cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<std::endl;
@@ -125,14 +125,14 @@ int Pagamentos::imprimeFormasPagamento()
 }
 
 
-//Função caso a forma de pagamento seja via PIX (1)----------------------------------------------------
+//Método caso a forma de pagamento seja via PIX (1)----------------------------------------------------
 void Pagamentos::PIX ()
 {
     std::cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<std::endl;
 }
 
 
-//Função caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
+//Método caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
 void Pagamentos::Dinheiro ()
 {
     std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
@@ -157,7 +157,7 @@ void Pagamentos::Dinheiro ()
 }
 
 
-//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
+//Método caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
 void Pagamentos::coletaDadosCartao(Cartao& cartao)
 {
 //Coleta nome do titular
