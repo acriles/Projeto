@@ -89,7 +89,39 @@ int Pagamentos::imprimeFormasPagamento()
     std::cout<< "Forma de pagamento: ";
     std::cin >> pagamento;
 	
-    return pagamento;
+	Pagamentos pagamentos;
+	
+   
+	while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
+				std::cout<<std::endl;
+				std::cout<< "OPCAO INVALIDA! Digite novamente: ";
+				std::cin>>pagamento;			
+		}
+
+
+		switch (pagamento){
+				case 1:
+				pagamentos.PIX();
+				break;
+				
+				case 2:
+				pagamentos.Dinheiro();
+				break;
+				
+				case 3:
+				pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
+				break;
+				
+				case 4:
+				pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
+				break;
+		}
+			
+			
+		std::cout<<std::endl;
+		std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
+		std::cout<<std::endl;
+
 }
 
 
@@ -187,41 +219,3 @@ void Pagamentos::coletaDadosCartao(Cartao& cartao)
 
 	
 }
-
-
-
-//SELEÇÃO DAS FORMAS DE PAGAMENTO-------------------------------------------------------------------
-
-Pagamentos pagamentos;
-int opcaoPagamento=pagamentos.imprimeFormasPagamento();
-
-
-while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
-            std::cout<<std::endl;
-            std::cout<< "OPCAO INVALIDA! Digite novamente: ";
-            std::cin>>opcaoPagamento;			
-    }
-
-
-    switch (opcaoPagamento){
-    		case 1:
-    		pagamentos.PIX();
-    		break;
-    		
-    		case 2:
-    		pagamentos.Dinheiro();
-    		break;
-    		
-    		case 3:
-    		pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
-    		break;
-    		
-    		case 4:
-    		pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
-    		break;
-    }
-    	
-    	
-    std::cout<<std::endl;
-    std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
-    std::cout<<std::endl;
