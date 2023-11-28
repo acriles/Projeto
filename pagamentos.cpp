@@ -203,19 +203,19 @@ while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha es
 
     switch (opcaoPagamento){
     		case 1:
-    		pagamentos.PIX();
+    		Pagamentos.PIX();
     		break;
     		
     		case 2:
-    		pagamentos.Dinheiro();
+    		Pagamentos.Dinheiro();
     		break;
     		
     		case 3:
-    		pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
+    		Pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
     		break;
     		
     		case 4:
-    		pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
+    		Pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
     		break;
     }
     	
