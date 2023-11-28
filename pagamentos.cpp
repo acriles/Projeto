@@ -192,7 +192,8 @@ void Pagamentos::coletaDadosCartao(Cartao& cartao)
 
 //SELEÇÃO DAS FORMAS DE PAGAMENTO-------------------------------------------------------------------
 
-int opcaoPagamento=Pagamentos.imprimeFormasPagamento();
+Pagamentos pagamentos;
+int opcaoPagamento=pagamentos.imprimeFormasPagamento();
 
 
 while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
@@ -204,19 +205,19 @@ while(!(opcaoPagamento>=1 && opcaoPagamento<=4)){     //Verifica se a escolha es
 
     switch (opcaoPagamento){
     		case 1:
-    		Pagamentos.PIX();
+    		pagamentos.PIX();
     		break;
     		
     		case 2:
-    		Pagamentos.Dinheiro();
+    		pagamentos.Dinheiro();
     		break;
     		
     		case 3:
-    		Pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
+    		pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
     		break;
     		
     		case 4:
-    		Pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
+    		pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
     		break;
     }
     	
