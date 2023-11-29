@@ -53,8 +53,8 @@ int Usuario::getTelefone(){
      
 void Usuario::cadastroInicial(){
   cout << "Digite seu nome" << endl;
-  cin >> nome;
-  cout << "Insira agora seu telefone" << endl;
+  cin.ignore();
+  getline(cin, nome);  cout << "Insira agora seu telefone" << endl;
   cin >> telefone;
   cout << "Por ultimo, insira seu cpf" << endl;
   cin >> cpf;
