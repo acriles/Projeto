@@ -162,7 +162,7 @@ void Pagamentos::coletaDadosCartao(Cartao& cartao)
 {
 //Coleta nome do titular
     std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
-    std::cin>> cartao.nomeTitular;
+    std::getline(std::cin, cartao.nomeTitular);
 
 	
 //Coleta numero do cartão
