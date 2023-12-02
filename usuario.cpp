@@ -104,9 +104,7 @@ void Usuario:: cadastrado(){
   cin >> confirmacaoPedido; 
       if (confirmacaoPedido ==1){
         cout << "Prosseguindo com pedido" <<endl;
-
-        Pedido pedido;
-        pedido.inicializar_cardapio();
+        return;
 
       } else if (confirmacaoPedido == 2) {
         cout << "Ficamos aguardando por você!" <<endl;
