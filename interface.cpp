@@ -38,8 +38,7 @@ void Interface::Fazer_login() {
 
         if (confirmacaoPedido == 1) { 
           cout << "Prosseguindo com pedido" << endl;
-          Pedido pedido;
-          pedido.inicializar_cardapio();
+          return;
         } 
         else {
            cout << "Ficamos aguardando por você!" << endl;
