@@ -58,7 +58,7 @@ public:
      void Confirmar_Usuario();
 
 ///@brief Insere o usuario cadastrado no banco de dados
-     void Inserir_usuario();
+     void Inserir_Usuario();
 
      void Cadastrado();
 
