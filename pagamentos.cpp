@@ -7,7 +7,7 @@ using namespace std;
 //Métodos----------------------------------------------------
 
 //Função para que o usuário selecione a forma de pagamento----------------------------------------------------
-void Pagamentos::ImprimeFormasPagamento()
+void Pagamentos::imprimeFormasPagamento()
 {
     cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<endl;
     cout<<endl;

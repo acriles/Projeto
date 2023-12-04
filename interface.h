@@ -10,9 +10,9 @@ private:
 public:
 
 ///@brief Verifica se um usuário possui cadastro no sistema
-    void Possui_Cadastro();
+    void PossuiCadastro();
 
 ///@brief Realiza o procedimento de login
-    void Fazer_Login();
+    void Fazer_login();
 
 };

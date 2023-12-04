@@ -55,12 +55,12 @@ public:
      int getTelefone();
 
 ///@brief Confirma o cadastro do usuario
-     void Confirmar_Usuario();
+     void confirmar_Usuario();
 
 ///@brief Insere o usuario cadastrado no banco de dados
-     void Inserir_Usuario();
+     void inserir_usuario();
 
-     void Cadastrado();
+     void cadastrado();
 
 
 ///@brief Destrutor da classe Usuario
