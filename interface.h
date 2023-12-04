@@ -13,6 +13,6 @@ public:
     void Possui_Cadastro();
 
 ///@brief Realiza o procedimento de login
-    void Fazer_login();
+    void Fazer_Login();
 
 };
