@@ -66,11 +66,11 @@ void Usuario::cadastroInicial(){
     cout << "Por ultimo, insira seu cpf" << endl;
     cin >> cpf;
   
-    confirmar_Usuario();
+    Confirmar_Usuario();
 }
 
 
-void Usuario::confirmar_Usuario(){
+void Usuario::Confirmar_Usuario(){
     int confimar_dados;
     int confirmacaoPedido;
 
@@ -92,7 +92,7 @@ void Usuario::confirmar_Usuario(){
         }
     }
 
-    else if(data.inserir_usuario(nome, endereco, telefone, cpf)){
+    else if(data.Inserir_Usuario(nome, endereco, telefone, cpf)){
         cout << "\nCadastro realizado com sucesso!\nCaso queira prosseguir com o pedido, digite 1, caso contrário digite qualaquer outra tecla.\n";
     }
 
@@ -103,12 +103,12 @@ void Usuario::confirmar_Usuario(){
     }
     else{
         cout << "Você digitou:"<< confimar_dados <<endl;
-        confirmar_Usuario();
+        Confirmar_Usuario();
     }
 }
 
 
-void Usuario:: cadastrado(){
+void Usuario:: Cadastrado(){
     int confirmacaoPedido;
     cin >> confirmacaoPedido; 
     if(confirmacaoPedido ==1){
@@ -118,6 +118,6 @@ void Usuario:: cadastrado(){
     else if(confirmacaoPedido == 2){
         cout << "Ficamos aguardando por você!" <<endl;
         cout << "Digite 1 para prosseguir com o pedido ou 2 para aguardar." <<endl;
-        cadastrado();
+        Cadastrado();
     }
 }
