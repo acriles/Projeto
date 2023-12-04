@@ -4,7 +4,8 @@
 #include "cardapio.h"
 
 using namespace std;
-
+#ifndef MENUPEDIDO_H
+#define MENUPEDIDO_H
 class MenuPedido{
 private:
     Pedido pedido;
@@ -36,3 +37,4 @@ public:
     void Valor_Total();           
 
 };
+#endif
