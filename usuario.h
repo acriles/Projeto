@@ -24,7 +24,7 @@ public:
      Usuario(string _nome, string _endereco, int _telefone, int _cpf);
 
 ///@brief Realiza o cadastro do usuario
-     void cadastroInicial();
+     void cadastroInicial(int& cpf1);
 
 ///@brief Define o nome do usuario
 ///@param _nome Nome do usuario
@@ -55,7 +55,7 @@ public:
      int getTelefone();
 
 ///@brief Confirma o cadastro do usuario
-     void confirmar_Usuario();
+     void confirmar_Usuario(int& cpf1);
 
 ///@brief Insere o usuario cadastrado no banco de dados
      void inserir_usuario();
