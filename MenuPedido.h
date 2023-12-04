@@ -17,10 +17,10 @@ public:
     MenuPedido(Pedido _pedido, Cardapio _cardapio);
 
     void Inicializar_MenuPedido();     //Inicializa o MenuPedido
-    void Inicializar_Pedido();     //Inicializa o Pedido
-    void Imprimir_Pedido();     //Imprime o Pedido atual
-    void Imprimir_Cardapio();     //Imprime o Cardápio disponível
-    void Remover_Pedido();     //Remove o Pedido atual
-    void Valor_Total();     //Calcula e exibe o valor total do Pedido
+    void Inicializar_Pedido();        //Inicializa o Pedido
+    void Imprimir_Pedido();          //Imprime o Pedido atual
+    void Imprimir_Cardapio();       //Imprime o Cardápio disponível
+    void Remover_Pedido();         //Remove o Pedido atual
+    void Valor_Total();           //Calcula e exibe o valor total do Pedido
 
 };
