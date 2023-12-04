@@ -5,10 +5,10 @@
 #include "pedido.h"
 #include "banco__de_dados.h"
 
-void Interface::PossuiCadastro(){
+void Interface::Possui_Cadastro(){
     unsigned cadastro = 0;
     cout << "Seja Bem vindo! Você possui cadastro?" << endl
-    << "Se sim digite 1, se nao digite qualquer tecla." << endl;
+    << "Se sim digite 1, se não digite qualquer tecla." << endl;
     cin >> cadastro;
     
     if(cadastro == 1){
@@ -33,7 +33,7 @@ void Interface::Fazer_login(){
     
     Data_base data;
 
-    if(data.ler_banco_de_dados(cpf_l, name)){
+    if(data.Ler_Banco_De_Dados(cpf_l, name)){
         cout << "\nParabéns " + name +" o seu login foi realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite qualquer outra tecla.\n";
         cin >> confirmacaoPedido;
 
@@ -47,7 +47,7 @@ void Interface::Fazer_login(){
         }
     }
     else{
-        cout << "Cpf incorreto, tente novamente.\n\n";
+        cout << "CPF incorreto. Tente novamente.\n\n";
         Fazer_login();
       }
    }
