@@ -1,5 +1,5 @@
-#include "MenuPedido.h"
-#include "bebida.h"
+#include "MenuPedido.hpp"
+#include "bebida.hpp"
 
 #include <iostream>
 using namespace std;
@@ -8,34 +8,56 @@ MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
   cardapio = _cardapio;
 }
 // void Inicializar_Cardapio() {}
-void MenuPedido::Inicializar_MenuPedido() {
-  cout << "Bem vindo ao Restaurante C++" << endl;
-  cout << "Escolha uma opção" << endl;
-  cout << "1 - Ver Cardapio" << endl;
-  cout << "2 - Fazer Pedido" << endl;
-  cout << "3 - Ver Pedido" << endl;
-  cout << "4 - Sair" << endl;
-  cout << "Opção: " << endl;
-  int opcao;
-  cin >> opcao;
-  switch (opcao) {
-  case 1:
-    cout << "Cardapio" << endl;
-    Imprimir_Cardapio();
-    break;
-  case 2:
-    cout << "Pedido" << endl;
-    Inicializar_Bebida();
-    break;
-  case 3:
-    cout << "Pedido feito" << endl;
-    Imprimir_Bebida();
-    break;
+
+void MenuPedido::Remover_Pedido() {
+  string codigo;
+  cout << "Digite o codigo do pedido que deseja retirar" << endl;
+  cin >> codigo;
+  if (pedido.ExisteBebida(codigo)) {
+    pedido.RemoverBebida(codigo);
   }
 }
 
+void MenuPedido::Inicializar_MenuPedido() {
+  int opcao = 0;
+  do {
+    cout << endl << "Escolha uma opção" << endl;
+    cout << "1 - Ver Cardapio" << endl;
+    cout << "2 - Fazer Pedido" << endl;
+    cout << "3 - Ver Pedido" << endl;
+    cout << "4 - Remover Pedido" << endl;
+    cout << "5 - Sair" << endl;
+    cout << "Opção: " << endl;
+    cin >> opcao;
+    switch (opcao) {
+    case 1:
+      cout << "Cardapio" << endl;
+      Imprimir_Cardapio();
+      break;
+    case 2:
+      cout << "Pedido" << endl;
+      Inicializar_Bebida();
+      break;
+    case 3:
+      cout << "Pedido feito" << endl;
+      Imprimir_Bebida_Pedido();
+      break;
+    case 4:
+      Remover_Pedido();
+      cout << "Pedido Removido" << endl;
+      break;
+
+    case 5:
+      cout << "Saindo" << endl;
+      break;
+    default:
+      cout << "opção invalida" << endl;
+    }
+  } while (opcao != 5);
+}
+
 void MenuPedido::Inicializar_Bebida() {
-  cout << "oq quer" << endl;
+  cout << "Digite o codido do seu pedido" << endl;
   string sabor;   // sabor da bebida
   string tipo;    // tipo da bebida
   string tamanho; // tamanho da bebida
@@ -52,23 +74,23 @@ void MenuPedido::Inicializar_Bebida() {
       valor = BebidasCardapio[i].getValor();
     }
   }
-
   Bebida bebida(codigo, tipo, sabor, tamanho, valor);
   pedido.InserirBebida(bebida);
-  Inicializar_MenuPedido();
 }
 
-void MenuPedido::Imprimir_Bebida() {
+void MenuPedido::Imprimir_Bebida_Pedido() {
   vector<Bebida> Imprimir = pedido.getBebidas();
-  for (int i = 0; i < Imprimir.size(); i++) {
-    cout << Imprimir[i].getSabor() << endl;
+  for (const auto &Aleatorio : Imprimir) {
+    cout << Aleatorio.getSabor();
   }
-  Inicializar_MenuPedido();
+  /*for (int i = 0; i < Imprimir.size(); i++) {
+    cout << Imprimir[i].getCodigo() << "-" << Imprimir[i].getSabor() << "-" <<
+  Imprimir[i].getT <<endl;
+  }*/
 }
 void MenuPedido::Imprimir_Cardapio() {
   vector<Bebida> ImprimirCardapio = cardapio.getBebidas();
   for (int i = 0; i < ImprimirCardapio.size(); i++) {
     cout << ImprimirCardapio[i].getSabor() << endl;
   }
-  Inicializar_MenuPedido();
 }
