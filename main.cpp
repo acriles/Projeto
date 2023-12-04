@@ -9,10 +9,10 @@
 using namespace std;
 
 int main(){
-
+    int cpf = 0;
 //USUÁRIO--------------------------------------------
     Interface inter;
-    inter.PossuiCadastro();
+    inter.PossuiCadastro(cpf);
 
 //PEDIDO----------------------------------------------
     
@@ -20,7 +20,9 @@ int main(){
     Cardapio cardapio;
 
     MenuPedido menu(pedido, cardapio);
-    menu.Inicializar_MenuPedido();
+    menu.Inicializar_MenuPedido(cpf);
+
+// PAGAMENTO
 
     Pagamentos pagamentos;
     pagamentos.imprimeFormasPagamento();
