@@ -14,13 +14,13 @@ Bebida::Bebida(string _codigo, string _tipo, string _sabor, string _tamanho,
 
 // Metodos get
 
-string Bebida::getSabor() { return sabor; }
+string Bebida::getSabor() const { return sabor; }
 
-string Bebida::getTamanho() { return tamanho; }
+string Bebida::getTamanho() const { return tamanho; }
 
-float Bebida::getValor() { return valor; }
+float Bebida::getValor() const { return valor; }
 
-string Bebida::getTipo() { return tipo; }
+string Bebida::getTipo() const { return tipo; }
 
 // Destrutor da classe
 Bebida::~Bebida(void) {
