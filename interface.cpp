@@ -8,7 +8,7 @@
 void Interface::PossuiCadastro(){
     unsigned cadastro = 0;
 
-    cout << "Seja Bem vindo! Você possui cadastro?" << endl
+    cout << "Seja Bem vindo(a)! Você possui cadastro?" << endl
     << "Se sim digite 1, se nao digite qualquer tecla." << endl;
     
     cin >> cadastro;
