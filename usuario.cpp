@@ -56,7 +56,7 @@ int Usuario::getTelefone(){
     return telefone;
 }
      
-void Usuario::cadastroInicial(){
+void Usuario::cadastroInicial(int& cpf1){
     cout << "Digite seu nome" << endl;
     cin.ignore();
 
@@ -65,12 +65,12 @@ void Usuario::cadastroInicial(){
   
     cout << "Por ultimo, insira seu cpf" << endl;
     cin >> cpf;
-  
-    confirmar_Usuario();
+    cpf1 = cpf;
+    confirmar_Usuario(cpf1);
 }
 
 
-void Usuario::confirmar_Usuario(){
+void Usuario::confirmar_Usuario(int& cpf1){
     int confimar_dados;
     int confirmacaoPedido;
 
@@ -88,7 +88,7 @@ void Usuario::confirmar_Usuario(){
         if(data.ler_banco_de_dados(cpf_analise, nome)){
             cout << "CPF já está cadastrado.\n";
             cout << "Reiniciando o cadastro:" << endl; 
-            cadastroInicial();
+            cadastroInicial(cpf);
         }
     
 
@@ -115,16 +115,16 @@ void Usuario::confirmar_Usuario(){
         int opcao;
         cin >> opcao;
         if (opcao == 1){
-          inter.Fazer_login();
+          inter.Fazer_login(cpf);
             }
         if (opcao == 2){
           cout << "Reiniciando Cadastro" <<endl;
-          cadastroInicial();
+          cadastroInicial(cpf);
         }
     }
     else{
         cout << "Você digitou:"<< confimar_dados <<endl;
-        confirmar_Usuario();
+        confirmar_Usuario(cpf);
     }
 }
 
