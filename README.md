@@ -10,10 +10,12 @@ fazer alterações extras nos acréscimos das pizzas selecionadas. </p>
 * [Status do Projeto](#status-do-Projeto)
 
 
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+* [Funcionalidades e Aplicação](#funcionalidades-e-aplicação) <br>
+O projeto tem como principal funcionalidade fazer o pedido de uma pizza com uma interface online. <br>
 
 
-* [Acesso ao Projeto](#acesso-ao-projeto) <br>
+* [Acesso ao Projeto](#acesso-ao-projeto) <br> <br>
+
 Link do projeto para a clonagem: 
 ```bash
   https://github.com/acriles/Projeto.git
@@ -33,7 +35,17 @@ Compilação:
   
   - Quando concluido, o programa estará pronto para uso
 ```
+```
+Para realizar os testes de unidade do programa, é necessario:
 
+ - Estar com o programa compilado (como ensinado anteriormente)
+
+ - Caso o arquivo de teste nao seja encontrado, é necessario digitar 'make test'
+
+ - Execute, no mesmo terminal de compilação, './test.out', para verificar apenas os testes falhos
+
+ - Para vizualizar os teste funcionais, execute './test.out -s'
+```
 
 * [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
   A construção do projeto contou com as seguintes ferramentas: <br>
