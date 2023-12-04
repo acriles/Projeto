@@ -20,7 +20,19 @@ void MenuPedido::Inicializar_MenuPedido(){
         cout << "2 - Fazer Pedido" << endl;
         cout << "3 - Ver Pedido" << endl;
         cout << "4 - Remover Pedido" << endl;
-        cout << "5 - Sair" << endl;
+
+        double valortotal = 0;
+        for (const auto &Aleatorio : pedido.getPizzas())
+            valortotal = valortotal + Aleatorio.getValor();
+        for (const auto &Aleatorio : pedido.getBebidas())
+            valortotal = valortotal + Aleatorio.getValor();
+
+        if ( valortotal == 0 ){
+        cout << "5 - Sair" << endl;}
+        
+        else {
+        cout << "5 - Efetuar Pagamento" << endl;}
+
         cout << "Opção: " << endl;
         cin >> opcao;
         if(std::cin.fail()){      //Confere se a entrada é um inteiro
@@ -51,7 +63,6 @@ void MenuPedido::Inicializar_MenuPedido(){
           break;
       case 5:
           Valor_Total();
-          cout << "Saindo" << endl;
           break;
           default:
           cout << "Opção inválida" << endl;
@@ -116,13 +127,19 @@ void MenuPedido::Valor_Total(){
         valortotal = valortotal + Aleatorio.getValor();
     for (const auto &Aleatorio : pedido.getBebidas())
         valortotal = valortotal + Aleatorio.getValor();
-    cout << "Valor total do pedido: " << "R$" << valortotal << endl;
+        
+    if (valortotal != 0){
+        cout << "Valor total do pedido: " << "R$" << valortotal << endl;
+    }
+    else{
+        cout << "Saindo" << endl;}
+    
 }
 
 
 //Imprime pizzas e bebidas do pedido
 void MenuPedido::Imprimir_Pedido(){
-    cout << "Pizzas pedidas" << endl;
+    cout << "pizzas pedidas" << endl;
     for(const auto &Aleatorio : pedido.getPizzas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
