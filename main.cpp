@@ -5,6 +5,7 @@
 #include "pagamentos.h"
 #include "interface.h"
 
+#include "MenuPedido.h"
 using namespace std;
 
 int main(){
@@ -14,10 +15,12 @@ int main(){
     inter.PossuiCadastro();
 
 //PEDIDO----------------------------------------------
+    
     Pedido pedido;
-    pedido.vetorPizzas();
-    pedido.imprimePedido();
+    Cardapio cardapio;
 
+    MenuPedido menu(pedido, cardapio);
+    menu.Inicializar_MenuPedido();
 
-    return 0;   
- }
+    return 0;
+}
