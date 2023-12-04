@@ -12,7 +12,7 @@ void Interface::Possui_Cadastro(){
     cin >> cadastro;
     
     if(cadastro == 1){
-        Fazer_login();
+        Fazer_Login();
         return;
      } 
     else{
@@ -23,7 +23,7 @@ void Interface::Possui_Cadastro(){
     }
 }
 
-void Interface::Fazer_login(){
+void Interface::Fazer_Login(){
     string name;
     int cpf_l;
     int confirmacaoPedido;
@@ -48,7 +48,7 @@ void Interface::Fazer_login(){
     }
     else{
         cout << "CPF incorreto. Tente novamente.\n\n";
-        Fazer_login();
+        Fazer_Login();
       }
    }
     
