@@ -2,7 +2,8 @@
 #include <vector>
 #include "bebida.h"
 #include "pizza.h"
-
+#ifndef CARDAPIO_H
+#define CARDAPIO_H
 using namespace std;
 
 class Cardapio{
@@ -23,3 +24,4 @@ private:
     vector<Pizza> getPizzas();
 
 };
+#endif
