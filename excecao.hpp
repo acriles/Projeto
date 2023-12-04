@@ -9,7 +9,7 @@ private:
 public:
 CodigoInvalido(std::string t){
   opcao = t;
-  mensagem = "A opção escolhida não existe.\nDigite uma Codigo valida:";
+  mensagem = "A opção escolhida não existe.\nDigite uma Codigo valida:\n";
 }
   const char* what() const throw() override{
     return mensagem.c_str();
