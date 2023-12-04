@@ -21,6 +21,8 @@ Cardapio::Cardapio()
               Bebida("#SM3", "Suco", "Maracujá", "300mL", 5.00)},
               Bebida("#SM5", "Suco", "Maracujá", "500mL", 7.00)},
               Bebida("#SM1", "Suco", "Maracujá", "1L", 10.00)},
+              Bebida("#AM5", "Água", "Água Mineral", "500mL", 3.00)},
+              Bebida("#AG5", "Água", "Água com Gás", "500mL", 5.00)},
       pizzas{Pizza("#CP", "Calabresa", "Pequena", 39.00),
              Pizza("#CM", "Calabresa", "Média", 49.00),
              Pizza("#CG", "Calabresa", "Grande", 59.00),
