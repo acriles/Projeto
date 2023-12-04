@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+
 using namespace std;
 
 #ifndef PAGAMENTOS_H
@@ -25,16 +26,14 @@ public:
 ///@brief Imprime a chave PIX caso essa seja a forma de pagamento
     void PIX();
 
-///@brief Imprime que o pagamento será feito na entrega caso a forma selecionada seja
-///    dinheiro e verifica se será necessário troco
+///@brief Imprime que o pagamento será feito na entrega caso a forma selecionada seja dinheiro e verifica se será necessário troco
     void Dinheiro();
 
 ///@brief Imprime as formas de pagamento para o usuário escolher qual deseja
 ///@return o numero correspondente à forma de pagamento escolhida
     int imprimeFormasPagamento();
 
-///@brief Coleta os dados do cartão (nome do titular, número do cartao, validade e cvv) 
-///    e armazena na struct caso a forma de pagamento seja cartão de crédito ou débito
+///@brief Coleta os dados do cartão (nome do titular, número do cartao, validade e cvv) e armazena na struct caso a forma de pagamento seja cartão de crédito ou débito
 ///@param cartao Struct que contém os dados do cartão a serem armazenados
     void coletaDadosCartao (Cartao& cartao);
 	
