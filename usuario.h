@@ -1,14 +1,13 @@
 #include <string>
 #include <vector>
-
 using namespace std;
 
 class Usuario{
 private:
-     string nome;                //Nome do usuario
-     string endereco;            //Endereço do usuario
-     int telefone;               //Telefone do usuario
-     int cpf;                    //CPF do usuario
+    string nome;     //Nome do usuario
+    string endereco;     //Endereço do usuario
+    int telefone;     //Telefone do usuario
+    int cpf;     //CPF do usuario
 
 
 public:
@@ -65,6 +64,5 @@ public:
 
 ///@brief Destrutor da classe Usuario
       ~Usuario(void); //destrutor 
-
 
 };
