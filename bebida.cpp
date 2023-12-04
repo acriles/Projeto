@@ -2,7 +2,6 @@
 #include <iostream>
 
 // Construtores classe Bebida
-Bebida::Bebida() {}
 Bebida::Bebida(string _codigo, string _tipo, string _sabor, string _tamanho, float _valor){
     tipo = _tipo;
     sabor = _sabor;

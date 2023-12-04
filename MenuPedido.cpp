@@ -23,7 +23,6 @@ void MenuPedido::Inicializar_MenuPedido(){
         cout << "5 - Sair" << endl;
         cout << "Opção: " << endl;
         cin >> opcao;
-
         if(std::cin.fail()){      //Confere se a entrada é um inteiro
             cin.clear();         //Limpa o buffer de entrada
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -123,7 +122,7 @@ void MenuPedido::Valor_Total(){
 
 //Imprime pizzas e bebidas do pedido
 void MenuPedido::Imprimir_Pedido(){
-    cout << "pizzas pedidas" << endl;
+    cout << "Pizzas pedidas" << endl;
     for(const auto &Aleatorio : pedido.getPizzas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;

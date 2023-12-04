@@ -18,7 +18,7 @@ Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf){
 Usuario::~Usuario(void){ 
     nome.clear();
     endereco.clear();
-    cout << "Classe destruída" << endl;
+    cout << "Classe destruida" << endl;
 }
 
 
@@ -66,11 +66,11 @@ void Usuario::cadastroInicial(){
     cout << "Por ultimo, insira seu cpf" << endl;
     cin >> cpf;
   
-    Confirmar_Usuario();
+    confirmar_Usuario();
 }
 
 
-void Usuario::Confirmar_Usuario(){
+void Usuario::confirmar_Usuario(){
     int confimar_dados;
     int confirmacaoPedido;
 
@@ -85,39 +85,38 @@ void Usuario::Confirmar_Usuario(){
     Data_base data;
 
     if(confimar_dados  == 1){
-        if(data.Ler_Banco_De_Dados(cpf_analise, nome)){
+        if(data.ler_banco_de_dados(cpf_analise, nome)){
             cout << "CPF já está cadastrado.\n";
             cout << "Reiniciando o cadastro:" << endl; 
             cadastroInicial();
         }
     }
 
-    else if(data.Inserir_Usuario(nome, endereco, telefone, cpf)){
+    else if(data.inserir_usuario(nome, endereco, telefone, cpf)){
         cout << "\nCadastro realizado com sucesso!\nCaso queira prosseguir com o pedido, digite 1, caso contrário digite qualaquer outra tecla.\n";
     }
 
     else if(confimar_dados  == 2){
         Interface inter;
-        cout << "Iniciando login!" <<endl;
-        inter.Fazer_Login();
+        cout << "Iniciando Login!" <<endl;
+        inter.Fazer_login();
     }
     else{
         cout << "Você digitou:"<< confimar_dados <<endl;
-        Confirmar_Usuario();
+        confirmar_Usuario();
     }
 }
 
 
-void Usuario:: Cadastrado(){
+void Usuario:: cadastrado(){
     int confirmacaoPedido;
     cin >> confirmacaoPedido; 
     if(confirmacaoPedido ==1){
         cout << "Prosseguindo com pedido" <<endl;
-        
     } 
     else if(confirmacaoPedido == 2){
         cout << "Ficamos aguardando por você!" <<endl;
         cout << "Digite 1 para prosseguir com o pedido ou 2 para aguardar." <<endl;
-        Cadastrado();
+        cadastrado();
     }
 }

@@ -9,9 +9,9 @@ vector<Bebida> Pedido::getBebidas() { return bebidaPedido; }
 vector<Pizza> Pedido::getPizzas() { return pizzaPedido; }
 
 
-bool Pedido::ExisteCodigo(string _codigo){
-  for(int i = 0; i < bebidaPedido.size(); i++){
-    if(_codigo == bebidaPedido[i].getCodigo())
+bool Pedido::ExisteCodigo(string _codigo) {
+  for (int i = 0; i < bebidaPedido.size(); i++) {
+    if (_codigo == bebidaPedido[i].getCodigo())
       return true;
   }
   for (int i = 0; i < pizzaPedido.size(); i++) {

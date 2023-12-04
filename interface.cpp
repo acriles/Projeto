@@ -5,16 +5,18 @@
 #include "pedido.h"
 #include "banco__de_dados.h"
 
-void Interface::Possui_Cadastro(){
+void Interface::PossuiCadastro(){
     unsigned cadastro = 0;
+
     cout << "Seja Bem vindo! Você possui cadastro?" << endl
-    << "Se sim digite 1, se não digite qualquer tecla." << endl;
+    << "Se sim digite 1, se nao digite qualquer tecla." << endl;
+    
     cin >> cadastro;
     
     if(cadastro == 1){
-        Fazer_Login();
+        Fazer_login();
         return;
-     } 
+     }
     else{
         Usuario user({}, {}, {}, {});
 
@@ -23,7 +25,7 @@ void Interface::Possui_Cadastro(){
     }
 }
 
-void Interface::Fazer_Login(){
+void Interface::Fazer_login(){
     string name;
     int cpf_l;
     int confirmacaoPedido;
@@ -33,23 +35,24 @@ void Interface::Fazer_Login(){
     
     Data_base data;
 
-    if(data.Ler_Banco_De_Dados(cpf_l, name)){
+    if(data.ler_banco_de_dados(cpf_l, name)){
         cout << "\nParabéns " + name +" o seu login foi realizado com sucesso! Caso queira prosseguir com o pedido, digite 1, caso contrário digite qualquer outra tecla.\n";
         cin >> confirmacaoPedido;
 
         if(confirmacaoPedido == 1){ 
           cout << "Prosseguindo com pedido" << endl;
+          
         } 
         else{
             while (confirmacaoPedido != 1){
                 cout << "Ficamos aguardando por você! Digite 1 para prosseguir com o pedido." << endl;
                 cin >> confirmacaoPedido;
-            }        
+            }           
         }
     }
     else{
-        cout << "CPF incorreto. Tente novamente.\n\n";
-        Fazer_Login();
+        cout << "Cpf incorreto, tente novamente.\n\n";
+        Fazer_login();
       }
    }
     
