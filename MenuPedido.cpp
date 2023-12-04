@@ -113,7 +113,7 @@ void MenuPedido::Valor_Total() {
     valortotal = valortotal + Aleatorio.getValor();
   for (const auto &Aleatorio : pedido.getBebidas())
     valortotal = valortotal + Aleatorio.getValor();
-  cout << "Valor total do pedido: " << valortotal << endl;
+  cout << "Valor total do pedido: " << "R$" << valortotal << endl;
 }
 
 // IMPRIME PIZZAS E BEBIDAS DO PEDIDO
