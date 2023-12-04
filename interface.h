@@ -5,12 +5,12 @@ using namespace std;
 
 class Interface{
 private:
-    int cpf;
+    int CPF;
 
 public:
 
 ///@brief Verifica se um usuário possui cadastro no sistema
-    void PossuiCadastro();
+    void Possui_Cadastro();
 
 ///@brief Realiza o procedimento de login
     void Fazer_login();
