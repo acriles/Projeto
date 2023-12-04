@@ -1,13 +1,18 @@
 #include <string>
-using namespace std;
 #include <vector>
 
+using namespace std;
+
 class Interface{
-    private:
-     int cpf;
+private:
+    int cpf;
 
+public:
 
-    public:
-     void PossuiCadastro();
-     void Fazer_login();
+///@brief Verifica se um usuário possui cadastro no sistema
+    void PossuiCadastro();
+
+///@brief Realiza o procedimento de login
+    void Fazer_login();
+
 };
