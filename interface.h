@@ -5,7 +5,7 @@ using namespace std;
 
 class Interface{
 private:
-    int CPF;
+    int cpf;
 
 public:
 
