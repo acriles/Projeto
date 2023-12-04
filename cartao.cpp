@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cctype> 
 
+using namespace std;
+
 //TRATAMENTOS DE EXCEÇÃO----------------------------------------------------
 
 //Função que verifica se o número tem 16 dígitos ----------------------------------------------------
@@ -83,61 +85,60 @@ Cartao::Cartao() {
 void Cartao::ColetaDadosCartao ()
 {
 //Coleta nome do titular
-    std::cout<<"Digite o nome do titular do cartao: ";
-    //std::getline(std::cin, nomeTitular);
-    std::cin>>nomeTitular;
+    cout<<"Digite o nome do titular do cartao: ";
+    cin>>nomeTitular;
 	
 //Coleta numero do cartão
-    std::cout<<std::endl;
-    std::cout<<"Digite o numero do cartao (16 digitos): ";
+    cout<<endl;
+    cout<<"Digite o numero do cartao (16 digitos): ";
     string numero;
-    std::getline(std::cin, numero);
+    getline(cin, numero);
 	
     while(!(VerificaNumero(numero))){
-            std::cout<<"Numero do cartao incorreto. Digite novamente: ";     
-            std::getline(std::cin, numero);
+            cout<<"Numero do cartao incorreto. Digite novamente: ";     
+            getline(cin, numero);
 }
 
 	
 //Coleta mês de validade
-    std::cout<<std::endl;
-    std::cout<<"Digite o mes de validade: ";
+    cout<<endl;
+    cout<<"Digite o mes de validade: ";
     int mes;
-    std::cin>>mes;
+    cin>>mes;
 	
     while(!(VerificaMes(mes))){
-            std::cout<<"Mes invalido! Digite novamente: ";
-            std::cin>>mes;
+            cout<<"Mes invalido! Digite novamente: ";
+            cin>>mes;
     }
 
 	
 //Coleta ano de validade
-	std::cout<<std::endl;
-	std::cout<<"Digite o ano validade (2 ultimos digitos): ";          
+	cout<<endl;
+	cout<<"Digite o ano validade (2 ultimos digitos): ";          
 	int ano;
-	std::cin>>ano;
+	cin>>ano;
 	
 	while (!(VerificaAno(ano))){
-		std::cout<<"Ano invalido! Digite novamente: ";     
-		std::cin>>ano;
+		cout<<"Ano invalido! Digite novamente: ";     
+		cin>>ano;
 	}
 
 	
 //Coleta cvv
-    std::cout<<std::endl;
-    std::cout<<"Digite o codigo de seguranca do cartao (CVV): ";
+    cout<<endl;
+    cout<<"Digite o codigo de seguranca do cartao (CVV): ";
     int codigo;
-    std::cin>>codigo;
+    cin>>codigo;
 	
     while(!(VerificaCvv(codigo))){
-            std::cout<<"CVV invalido! Digite novamente: ";     
-            std::cin>>codigo;
+            cout<<"CVV invalido! Digite novamente: ";     
+            cin>>codigo;
 	}
 	
 	
-    std::cout<<std::endl;
-    std::cout<<"Pagamento aprovado.";
-    std::cout<<std::endl;
+    cout<<endl;
+    cout<<"Pagamento aprovado.";
+    cout<<endl;
 
 	
 }
