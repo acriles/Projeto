@@ -18,7 +18,7 @@ Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf){
 Usuario::~Usuario(void){ 
     nome.clear();
     endereco.clear();
-    cout << "Classe destruida" << endl;
+    cout << "Classe destruída" << endl;
 }
 
 
@@ -85,7 +85,7 @@ void Usuario::confirmar_Usuario(){
     Data_base data;
 
     if(confimar_dados  == 1){
-        if(data.ler_banco_de_dados(cpf_analise, nome)){
+        if(data.Ler_Banco_De_Dados(cpf_analise, nome)){
             cout << "CPF já está cadastrado.\n";
             cout << "Reiniciando o cadastro:" << endl; 
             cadastroInicial();
@@ -98,8 +98,8 @@ void Usuario::confirmar_Usuario(){
 
     else if(confimar_dados  == 2){
         Interface inter;
-        cout << "Iniciando Login!" <<endl;
-        inter.Fazer_login();
+        cout << "Iniciando login!" <<endl;
+        inter.Fazer_Login();
     }
     else{
         cout << "Você digitou:"<< confimar_dados <<endl;
