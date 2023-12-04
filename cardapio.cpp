@@ -36,6 +36,6 @@ Cardapio::Cardapio()
              Pizza("#BP", "Bacon com Cheddar", "Pequena", 39.00),
              Pizza("#BM", "Bacon com Cheddar", "Média", 49.00),
              Pizza("#BG", "Bacon com Cheddar", "Grande", 59.00)} {}
-
+bool ExisteCodigo(string _codigo);
 vector<Bebida> Cardapio::getBebidas() { return bebidas; }
 vector<Pizza> Cardapio::getPizzas() { return pizzas; }
