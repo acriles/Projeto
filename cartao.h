@@ -38,7 +38,7 @@ public:
 	
 
 private:
-	  string nomeTitular;                //nome do titular do cartao 
+    string nomeTitular;                //nome do titular do cartao 
     string numeroCartao;              //numero do cartao
     int mesValidade;                 //mes de validade do cartao
     int anoValidade;                //ano de validade do cartao
