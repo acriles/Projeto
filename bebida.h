@@ -7,11 +7,11 @@ using namespace std;
 
 class Bebida{
 private:
-    string sabor;     //Sabor da bebida
-    string tipo;     //Tipo da bebida
-    string tamanho;  //Tamanho da bebida
-    float valor;     //Valor da bebida
-    string codigo;   //Codigo de identificacao da bebida
+    string sabor;        //Sabor da bebida
+    string tipo;        //Tipo da bebida
+    string tamanho;    //Tamanho da bebida
+    float valor;      //Valor da bebida
+    string codigo;   //Código de identificação da bebida
 
 public:
 ///@brief Inicializa os membros da classe
@@ -44,7 +44,7 @@ public:
 ///@return Valor da bebida
     float getValor() const;
 
-    ~Bebida(void); // destrutor
+    ~Bebida(void); //Destrutor
 };
 
 
