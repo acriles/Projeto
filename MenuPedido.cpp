@@ -24,11 +24,11 @@ void MenuPedido::Inicializar_MenuPedido(){
         cin >> opcao;
 
         if(std::cin.fail()){      //Confere se a entrada é um inteiro
-            cin.clear();     //Limpa o buffer de entrada
+            cin.clear();         //Limpa o buffer de entrada
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             //Exibir mensagem de erro
             cout << "Entrada inválida. Por favor, digite um número inteiro." << endl;
-            continue;     //Continuar no próximo loop
+            continue;       //Continuar no próximo loop
         }
     
       switch(opcao){
@@ -71,7 +71,7 @@ void MenuPedido::Inicializar_Pedido(){
             Bebida bebida(Aleatorio.getCodigo(), Aleatorio.getSabor(),
             Aleatorio.getTipo(), Aleatorio.getTamanho(),
             Aleatorio.getValor());
-            pedido.InserirBebida(bebida);        //Insere a bebida no pedido
+            pedido.InserirBebida(bebida);             //Insere a bebida no pedido
             cout << "Bebida selecionada" << endl     //Imprime a bebida escolhida
             << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
             << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
@@ -84,7 +84,7 @@ void MenuPedido::Inicializar_Pedido(){
             existe = true;
             Pizza pizza(Aleatorio.getCodigo(), Aleatorio.getSabor(),
             Aleatorio.getTamanho(), Aleatorio.getValor());
-            pedido.InserirPizza(pizza);     //Insere a pizza no pedido
+            pedido.InserirPizza(pizza);              //Insere a pizza no pedido
             cout << "Pizza selecionada" << endl     //Imprime a pizza escolhida
             << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
             << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
