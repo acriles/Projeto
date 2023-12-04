@@ -113,7 +113,7 @@ void Usuario:: Cadastrado(){
     cin >> confirmacaoPedido; 
     if(confirmacaoPedido ==1){
         cout << "Prosseguindo com pedido" <<endl;
-        return;
+        
     } 
     else if(confirmacaoPedido == 2){
         cout << "Ficamos aguardando por você!" <<endl;
