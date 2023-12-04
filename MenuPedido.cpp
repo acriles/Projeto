@@ -1,4 +1,5 @@
 #include "MenuPedido.h"
+#include "excecao.h"
 #include <limits>
 #include <iostream>
 
@@ -63,7 +64,9 @@ void MenuPedido::Inicializar_MenuPedido(){
 void MenuPedido::Inicializar_Pedido(){
     string codigo;
     bool existe = false;     //Indica se o código selecionado existe ou não
+    do{
     cin >> codigo;
+             try{
     //Verificar se existe bebida com esse código
     for(const auto &Aleatorio : cardapio.getBebidas()){
         if(Aleatorio.getCodigo() == codigo){
@@ -91,11 +94,14 @@ void MenuPedido::Inicializar_Pedido(){
 
             break;
         }
+    if (existe == false) {
+        throw CodigoInvalido(codigo);
+        // cout << "Codigo invalido" << endl;
+      }
+    } catch (CodigoInvalido e) {
+      cout << e.what();
     }
-    if(existe == false){
-        cout << "Código inválido" << endl;
-    }
-    codigo.clear();
+  } while (cardapio.ExisteCodigo(codigo) == false);
 }
 
 
