@@ -15,9 +15,6 @@ private:
     string codigo;   //codigo de identificacao da bebida
 
 public:
-///@brief Construtor da classe
-    Bebida();
-
 ///@brief Inicializa os membros da classe
 ///@param _codigo Codigo utilizado para identificar cada bebida
 ///@param _tipo Tipo de bebida - refrigerante ou suco
@@ -33,43 +30,22 @@ public:
     return codigo;
     }//nao apareceu o commit
 
-///@brief Define o tipo da bebida
-///@param _tipo Novo tipo de bebida
-    void setTipo(string _tipo);
-
-///@brief Define o sabor da bebida
-///@param _tipo Novo sabor de bebida
-    void setSabor(string _sabor);
-
-///@brief Define o tamanho da bebida
-///@param _tipo Novo tamanho de bebida
-    void setTamanho(string _tamanho);
-
-///@brief Define o valor da bebida
-///@param _tipo Novo valor de bebida
-    void setValor(float _valor);
-
 ///@brief Obtem o sabor da bebida escolhida
 ///@return Sabor da bebida
-    string getSabor();
+    string getSabor() const;
 
 ///@brief Obtem o tipo da bebida escolhida
 ///@return Tipo da bebida
-    string getTipo();
+    string getTipo() const;
 
 ///@brief Obtem o tamanho da bebida escolhida
 ///@return Tamanho da bebida
-    string getTamanho();
+    string getTamanho() const;
 
 ///@brief Obtem o valor da bebida escolhida
 ///@return Valor da bebida
-    float getValor();
+    float getValor() const;
 
-///@brief Imprime as informações sobre a bebida
-    void imprimeBebida();
-
-///@brief Inicializa os parâmetros da bebida
-    void inicializandoBebida();
     ~Bebida(void); // destrutor
 };
 
