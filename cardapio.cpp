@@ -18,14 +18,24 @@ Cardapio::Cardapio()
               Bebida("#SU3", "Suco", "Uva", "300mL", 5.00)},
               Bebida("#SU5", "Suco", "Uva", "500mL", 7.00)},
               Bebida("#SU1", "Suco", "Uva", "1L", 10.00)},
-      pizzas{Pizza("#CP", "Calabresa", "Pequena", 39.0),
-             Pizza("#CG", "Calabresa", "Grande", 59.0),
-             Pizza("#MP", "Marguerita", "Pequena", 39.0),
-             Pizza("#MM", "Marguerita", "Média", 49.0),
-             Pizza("#MG", "Marguerita", "Grande", 59.0),
-             Pizza("#BP", "Bacon", "Pequena", 39.0),
-             Pizza("#BM", "Bacon", "Média", 49.0),
-             Pizza("#BG", "Bacon", "Grande", 59.0)} {}
+      pizzas{Pizza("#CP", "Calabresa", "Pequena", 39.00),
+             Pizza("#CM", "Calabresa", "Média", 49.00),
+             Pizza("#CG", "Calabresa", "Grande", 59.00),
+             Pizza("#MP", "Marguerita", "Pequena", 39.00),
+             Pizza("#MM", "Marguerita", "Média", 49.00),
+             Pizza("#MG", "Marguerita", "Grande", 59.00),
+             Pizza("#QP", "Quatro Queijos", "Pequena", 39.00),
+             Pizza("#QM", "Quatro Queijos", "Média", 49.00),
+             Pizza("#QG", "Quatro Queijos", "Grande", 59.00),
+             Pizza("#PP", "Portuguesa", "Pequena", 39.00),
+             Pizza("#PM", "Portuguesa", "Média", 49.00),
+             Pizza("#PG", "Portuguesa", "Grande", 59.00),
+             Pizza("#FP", "Frango com catupiry", "Pequena", 39.00),
+             Pizza("#FM", "Frango com catupiry", "Média", 49.00),
+             Pizza("#FG", "Frango com catupiry", "Grande", 59.00),
+             Pizza("#BP", "Bacon com Cheddar", "Pequena", 39.00),
+             Pizza("#BM", "Bacon com Cheddar", "Média", 49.00),
+             Pizza("#BG", "Bacon com Cheddar", "Grande", 59.00)} {}
 
 vector<Bebida> Cardapio::getBebidas() { return bebidas; }
 vector<Pizza> Cardapio::getPizzas() { return pizzas; }
