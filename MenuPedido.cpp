@@ -11,7 +11,6 @@ MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
 
 void MenuPedido::Remover_Pedido() {
   string codigo;
-  cout << "Digite o codigo do pedido que deseja retirar" << endl;
   cin >> codigo;
   if (pedido.ExisteBebida(codigo)) {
     pedido.RemoverBebida(codigo);
@@ -35,14 +34,15 @@ void MenuPedido::Inicializar_MenuPedido() {
       Imprimir_Cardapio();
       break;
     case 2:
-      cout << "Pedido" << endl;
+      cout << "Digite o codido do seu pedido" << endl;
       Inicializar_Bebida();
       break;
     case 3:
-      cout << "Pedido feito" << endl;
+      cout << "Pedidos feitos" << endl;
       Imprimir_Bebida_Pedido();
       break;
     case 4:
+      cout << "Digite o codigo do pedido que deseja retirar" << endl;
       Remover_Pedido();
       cout << "Pedido Removido" << endl;
       break;
@@ -57,40 +57,27 @@ void MenuPedido::Inicializar_MenuPedido() {
 }
 
 void MenuPedido::Inicializar_Bebida() {
-  cout << "Digite o codido do seu pedido" << endl;
-  string sabor;   // sabor da bebida
-  string tipo;    // tipo da bebida
-  string tamanho; // tamanho da bebida
-  float valor;    // valor da bebida
-  string codigo;  // codigo de identificacao da bebida
+  string codigo; 
   cin >> codigo;
-
-  vector<Bebida> BebidasCardapio = cardapio.getBebidas();
-  for (int i = 0; i < BebidasCardapio.size(); i++) {
-    if (BebidasCardapio[i].getCodigo() == codigo) {
-      sabor = BebidasCardapio[i].getSabor();
-      tipo = BebidasCardapio[i].getTipo();
-      tamanho = BebidasCardapio[i].getTamanho();
-      valor = BebidasCardapio[i].getValor();
+  // VERIFICAR SE EXISTE BEBIDA COM ESSE CODIGO
+  for (const auto &Aleatorio : cardapio.getBebidas()) {
+    if (Aleatorio.getCodigo() == codigo) {
+      Bebida bebida2(codigo, Aleatorio.getSabor(), Aleatorio.getTipo(),
+                     Aleatorio.getTamanho(), Aleatorio.getValor());
+      pedido.InserirBebida(bebida2); //INSERE A BEBIDA EM PEDIDO
     }
   }
-  Bebida bebida(codigo, tipo, sabor, tamanho, valor);
-  pedido.InserirBebida(bebida);
 }
 
 void MenuPedido::Imprimir_Bebida_Pedido() {
-  vector<Bebida> Imprimir = pedido.getBebidas();
-  for (const auto &Aleatorio : Imprimir) {
-    cout << Aleatorio.getSabor();
-  }
-  /*for (int i = 0; i < Imprimir.size(); i++) {
-    cout << Imprimir[i].getCodigo() << "-" << Imprimir[i].getSabor() << "-" <<
-  Imprimir[i].getT <<endl;
-  }*/
+  for (const auto &Aleatorio : pedido.getBebidas())
+    cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+         << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
+         << Aleatorio.getValor() << endl;
 }
 void MenuPedido::Imprimir_Cardapio() {
-  vector<Bebida> ImprimirCardapio = cardapio.getBebidas();
-  for (int i = 0; i < ImprimirCardapio.size(); i++) {
-    cout << ImprimirCardapio[i].getSabor() << endl;
-  }
+  for (const auto &Aleatorio : cardapio.getBebidas())
+    cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+         << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
+         << Aleatorio.getValor() << endl;
 }
