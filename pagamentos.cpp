@@ -29,29 +29,29 @@ void Pagamentos::ImprimeFormasPagamento()
 	
    
     while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
-	cout<<endl;
-	cout<< "OPCAO INVALIDA! Digite novamente: ";
-	cin>>pagamento;			
-	}
+	    cout<<endl;
+      cout<< "OPCAO INVALIDA! Digite novamente: ";
+      cin>>pagamento;			
+    }
 
 
     switch (pagamento){
-	case 1:
-	   pagamentos.PIX();
-	break;
-				
-	case 2:
-	   pagamentos.Dinheiro();
-	break;
-				
-	case 3:
-	   cartao.ColetaDadosCartao();            
-	break;
-				
-	case 4:
-	   cartao.ColetaDadosCartao();
-	break;
-	}
+        case 1:
+           pagamentos.PIX();
+        break;
+
+        case 2:
+           pagamentos.Dinheiro();
+        break;
+
+        case 3:
+           cartao.ColetaDadosCartao();            
+        break;
+
+        case 4:
+           cartao.ColetaDadosCartao();
+        break;
+    }
 			
 			
     cout<<endl;

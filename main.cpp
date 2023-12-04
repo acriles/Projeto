@@ -3,15 +3,15 @@
 #include "pedido.h"
 #include "cardapio.h"
 #include "pagamentos.h"
-
+#include "interface.h"
 
 using namespace std;
 
 int main(){
 
 //USUÁRIO--------------------------------------------
-    Usuario user({}, {}, {}, {}, {});
-    user.PossuiCadastro();
+    Interface inter;
+    inter.PossuiCadastro();
 
 //PEDIDO----------------------------------------------
     Pedido pedido;

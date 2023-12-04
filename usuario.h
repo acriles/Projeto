@@ -9,7 +9,6 @@ private:
      string endereco;            //Endereço do usuario
      int telefone;               //Telefone do usuario
      int cpf;                    //CPF do usuario
-     vector<int> cpfs;           //Vetor que contempla os CPFs cadastrados para acesso futuro 
 
 
 public:
@@ -22,7 +21,7 @@ public:
 ///@param _telefone Telefone do usuario
 ///@param _cpf CPF do usuario
 ///@param _cpfs Vetor de CPFs cadastrados
-     Usuario(string _nome, string _endereco, int _telefone, int _cpf,vector<int> _cpfs);
+     Usuario(string _nome, string _endereco, int _telefone, int _cpf);
 
 ///@brief Realiza o cadastro do usuario
      void cadastroInicial();
@@ -58,20 +57,14 @@ public:
 ///@brief Confirma o cadastro do usuario
      void confirmar_Usuario();
 
-
-///@brief Verifica se o usuario já possui cadastro
-     void PossuiCadastro();
-
-///@brief Realiza o login do usuario já cadastrado
-     void Fazer_login();
-
 ///@brief Insere o usuario cadastrado no banco de dados
      void inserir_usuario();
 
-///@brief Lê o banco de dados de usuarios cadastrados
-     void ler_banco_de_dados(); 
+     void cadastrado();
+
 
 ///@brief Destrutor da classe Usuario
       ~Usuario(void); //destrutor 
+
 
 };
