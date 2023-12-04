@@ -2,6 +2,8 @@
 #include <vector>
 #include "bebida.h"
 #include "pizza.h"
+#ifndef PEDIDO_H
+#define PEDIDO_H
 
 using namespace std;
 
@@ -41,3 +43,4 @@ public:
     vector<Pizza> getPizzas(); 
 
 };
+#endif
