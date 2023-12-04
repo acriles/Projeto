@@ -5,7 +5,7 @@
 #include <cppconn/statement.h>
 #include <cppconn/resultset.h>
 
-bool Data_base:: inserir_usuario(string nome, string endereco, int telefone, int cpf) {
+bool Data_base:: Inserir_Usuario(string nome, string endereco, int telefone, int cpf) {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
 
@@ -34,7 +34,7 @@ bool Data_base:: inserir_usuario(string nome, string endereco, int telefone, int
 
 
 
-bool Data_base::ler_banco_de_dados(int& _cpf, string& name) {
+bool Data_base::Ler_Banco_De_Dados(int& _cpf, string& name) {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
 
