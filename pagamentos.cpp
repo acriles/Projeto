@@ -1,126 +1,62 @@
 #include "pagamentos.h"
+#include "cartao.h"
 #include <iostream>
 
-//TRATAMENTOS DE EXCEÇÃO----------------------------------------------------
-
-//Função que verifica se o número tem 16 dígitos ----------------------------------------------------
-int verificaNumero(long long int num, Cartao& cartao){
-    int cont=0;
-    long long int aux=num;
-	
-    while(aux!=0){
-            aux/=10;
-	    cont++;
-    }
-	
-    if(cont==16){     //Se tiver 16 dígitos, o número do cartão é valido. Logo, podemos armazenar na struct
-            cartao.numeroCartao=num;
-	    return 1;
-    }
-	    
-    else{
-            return 0;
-    }
-}
-
-
-//Função que verifica se o mês é válido -----------------------------------------------------
-int verificaMes(int m, Cartao& cartao){
-    if(m>=1 && m<=12){
-            cartao.mesValidade=m;
-	    return 1;
-    }
-	    
-    else{
-            return 0;
-    }
-}
-
-
-//Função que verifica se o ano é válido----------------------------------------------------
-int verificaAno(int a, Cartao& cartao){
-    if(a>=23 && a<=40){     //Supondo que um cartão atual não tenha validade superior ao ano de 2040
-            cartao.anoValidade=a;
-	    return 1;
-    }
-	    
-    else{
-            return 0;
-    }
-}
-
-
-//Função que verifica se o CVV é válido -----------------------------------------------------
-int verificaCvv(int cod, Cartao& cartao)
-{
-    int cont=0;
-    long long int aux=cod;
-	
-    while(aux!=0){
-            aux/=10;
-            cont++;
-    }
-	
-    if(cont==3){             //Se tiver 3 dígitos, o CVV digitado é valido. Logo, podemos armazenar na struct
-            cartao.cvv=cod;
-            return 1;
-    }
-	    
-    else{
-            return 0;
-    }
-}
-
+using namespace std;
 
 //Métodos----------------------------------------------------
 
 //Função para que o usuário selecione a forma de pagamento----------------------------------------------------
-int Pagamentos::imprimeFormasPagamento()
+void Pagamentos::ImprimeFormasPagamento()
 {
-    std::cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<std::endl;
-    std::cout<<std::endl;
-    std::cout<<"1. Pix"<<std::endl;
-    std::cout<<"2. Dinheiro"<<std::endl;
-    std::cout<<"3. Cartao de Credito"<<std::endl;
-    std::cout<<"4. Cartao de Debito"<<std::endl;
+    cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<endl;
+    cout<<endl;
+    cout<<"1. Pix"<<endl;
+    cout<<"2. Dinheiro"<<endl;
+    cout<<"3. Cartao de Credito"<<endl;
+    cout<<"4. Cartao de Debito"<<endl;
 	
     int pagamento=0;
-    std::cout<<std::endl;
-    std::cout<< "Forma de pagamento: ";
-    std::cin >> pagamento;
-	
-	Pagamentos pagamentos;
+    cout<<endl;
+    cout<< "Forma de pagamento: ";
+    cin >> pagamento;
+    cout<<endl;
+
+
+    Pagamentos pagamentos;
+
+    Cartao cartao;
 	
    
-	while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
-				std::cout<<std::endl;
-				std::cout<< "OPCAO INVALIDA! Digite novamente: ";
-				std::cin>>pagamento;			
-		}
+    while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
+	    cout<<endl;
+      cout<< "OPCAO INVALIDA! Digite novamente: ";
+      cin>>pagamento;			
+    }
 
 
-		switch (pagamento){
-				case 1:
-				pagamentos.PIX();
-				break;
-				
-				case 2:
-				pagamentos.Dinheiro();
-				break;
-				
-				case 3:
-				pagamentos.coletaDadosCartao(pagamentos.cartaoCred);
-				break;
-				
-				case 4:
-				pagamentos.coletaDadosCartao(pagamentos.cartaoDeb);
-				break;
-		}
+    switch (pagamento){
+        case 1:
+           pagamentos.PIX();
+        break;
+
+        case 2:
+           pagamentos.Dinheiro();
+        break;
+
+        case 3:
+           cartao.ColetaDadosCartao();            
+        break;
+
+        case 4:
+           cartao.ColetaDadosCartao();
+        break;
+    }
 			
 			
-		std::cout<<std::endl;
-		std::cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
-		std::cout<<std::endl;
+    cout<<endl;
+    cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
+    cout<<endl;
 
 }
 
@@ -128,94 +64,30 @@ int Pagamentos::imprimeFormasPagamento()
 //Função caso a forma de pagamento seja via PIX (1)----------------------------------------------------
 void Pagamentos::PIX ()
 {
-    std::cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<std::endl;
+    cout<< "Chave PIX: 96.123.687/0001-75 - CNPJ"<<endl;
 }
 
 
 //Função caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
 void Pagamentos::Dinheiro ()
 {
-    std::cout<< "Pagamento a ser realizado na entrega."<<std::endl;
-    std::cout<< "Sera necessario troco?"<<std::endl;
-    std::cout<<std::endl;
-    std::cout<<"1. Sim" << std::endl;
-    std::cout<< "2. Nao" << std::endl;
+    cout<< "Pagamento a ser realizado na entrega."<<endl;
+    cout<< "Sera necessario troco?"<<endl;
+    cout<<endl;
+    cout<<"1. Sim" << endl;
+    cout<< "2. Nao" << endl;
 	
     int escolhaTroco=0;
-    std::cout<<std::endl;
-    std::cin >> escolhaTroco;
+    cout<<endl;
+    cin >> escolhaTroco;
 	
     if(escolhaTroco==1){
-            std::cout<<std::endl;
-            std::cout<<"Troco para quanto?"<<std::endl;
+            cout<<endl;
+            cout<<"Troco para quanto?"<<endl;
 	
             int valor;
-            std::cout<< "Valor em reais: ";
-            std::cin>>valor;
+            cout<< "Valor em reais: ";
+            cin>>valor;
 		
     }
-}
-
-
-//Função caso a forma de pagamento seja Cartão (3 ou 4)---------------------------------------------------
-void Pagamentos::coletaDadosCartao(Cartao& cartao)
-{
-//Coleta nome do titular
-    std::cout<<"Digite o PRIMEIRO nome do titular do cartao: ";
-    std::getline(std::cin, cartao.nomeTitular);
-
-	
-//Coleta numero do cartão
-    std::cout<<std::endl;
-    std::cout<<"Digite o numero do cartao (16 digitos): ";
-    long long int numero;
-    std::cin>>numero;
-	
-    while(!(verificaNumero(numero, cartao))){
-            std::cout<<"Numero do cartao incorreto. Digite novamente: ";     //TESTCASE
-            std::cin>>numero;
-}
-
-	
-//Coleta mês de validade
-    std::cout<<std::endl;
-    std::cout<<"Digite o mes de validade: ";
-    int mes;
-    std::cin>>mes;
-	
-    while(!(verificaMes(mes, cartao))){
-            std::cout<<"Mes invalido! Digite novamente: ";
-            std::cin>>mes;
-    }
-
-	
-//Coleta ano de validade
-	std::cout<<std::endl;
-	std::cout<<"Digite o ano validade (2 ultimos digitos): ";          
-	int ano;
-	std::cin>>ano;
-	
-	while (!(verificaAno(ano, cartao))){
-		std::cout<<"Ano invalido! Digite novamente: ";     //TESTCASE
-		std::cin>>ano;
-	}
-
-	
-//Coleta cvv
-    std::cout<<std::endl;
-    std::cout<<"Digite o codigo de seguranca do cartao (CVV): ";
-    int codigo;
-    std::cin>>codigo;
-	
-    while(!(verificaCvv(codigo, cartao))){
-            std::cout<<"CVV invalido! Digite novamente: ";     //TESTCASE
-            std::cin>>codigo;
-	}
-	
-	
-    std::cout<<std::endl;
-    std::cout<<"Pagamento aprovado.";
-    std::cout<<std::endl;
-
-	
 }
