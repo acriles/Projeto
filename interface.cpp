@@ -39,11 +39,12 @@ void Interface::Fazer_Login(){
 
         if(confirmacaoPedido == 1){ 
           cout << "Prosseguindo com pedido" << endl;
-          return;
         } 
         else{
-           cout << "Ficamos aguardando por você!" << endl;
-           return;
+            while (confirmacaoPedido != 1){
+                cout << "Ficamos aguardando por você! Digite 1 para prosseguir com o pedido." << endl;
+                cin >> confirmacaoPedido;
+            }        
         }
     }
     else{
