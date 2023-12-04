@@ -30,9 +30,9 @@ Cardapio::Cardapio()
              Pizza("#PP", "Portuguesa", "Pequena", 39.00),
              Pizza("#PM", "Portuguesa", "Média", 49.00),
              Pizza("#PG", "Portuguesa", "Grande", 59.00),
-             Pizza("#FP", "Frango com catupiry", "Pequena", 39.00),
-             Pizza("#FM", "Frango com catupiry", "Média", 49.00),
-             Pizza("#FG", "Frango com catupiry", "Grande", 59.00),
+             Pizza("#FP", "Frango com Catupiry", "Pequena", 39.00),
+             Pizza("#FM", "Frango com Catupiry", "Média", 49.00),
+             Pizza("#FG", "Frango com Catupiry", "Grande", 59.00),
              Pizza("#BP", "Bacon com Cheddar", "Pequena", 39.00),
              Pizza("#BM", "Bacon com Cheddar", "Média", 49.00),
              Pizza("#BG", "Bacon com Cheddar", "Grande", 59.00)} {}
