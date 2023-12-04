@@ -7,7 +7,7 @@ using namespace std;
 #define PAGAMENTOS_H
 
 //Struct Cartao: armazena os dados do cartão de crédito/débito a ser utilizado no pagamento
-struct Cartao {
+struct Cartao{
 public:
     string nomeTitular;
     long long int numeroCartao;     //Usando long long int para representar um número de 16 dígitos
@@ -17,10 +17,7 @@ public:
 };
 
 
-
-
 class Pagamentos{
-
 public:
 
 ///@brief Imprime a chave PIX caso essa seja a forma de pagamento
@@ -35,10 +32,10 @@ public:
 
 ///@brief Coleta os dados do cartão (nome do titular, número do cartao, validade e cvv) e armazena na struct caso a forma de pagamento seja cartão de crédito ou débito
 ///@param cartao Struct que contém os dados do cartão a serem armazenados
-    void coletaDadosCartao (Cartao& cartao);
+    void Coleta_Dados_Cartao (Cartao& cartao);
 	
-    Cartao cartaoCred;      // Dados do cartao de credito
-    Cartao cartaoDeb;       // Dados do cartao de debito
+    Cartao cartaoCred;      //Dados do cartao de credito
+    Cartao cartaoDeb;      //Dados do cartao de debito
 };
 
 #endif
