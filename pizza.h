@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+
 using namespace std;
 
 #ifndef PIZZA_H
@@ -7,9 +8,9 @@ using namespace std;
 
 class Pizza{
 private:
-    string sabor;     //Sabor da pizza
-    string tamanho;     //Tamanho da pizza
-    float valor;     //Valor da pizza
+    string sabor;         //Sabor da pizza
+    string tamanho;      //Tamanho da pizza
+    float valor;        //Valor da pizza
     string codigo;     //Código de identificação da pizza
 
 
