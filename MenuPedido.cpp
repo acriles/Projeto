@@ -1,5 +1,5 @@
-#include "MenuPedido.hpp"
-#include "bebida.hpp"
+#include "MenuPedido.h"
+#include "bebida.h"
 
 #include <iostream>
 using namespace std;
