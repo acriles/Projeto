@@ -1,6 +1,7 @@
 #include <string>
-using namespace std;
 #include <vector>
+
+using namespace std;
 
 class Data_base{
 private:
