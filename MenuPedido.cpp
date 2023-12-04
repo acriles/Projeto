@@ -16,7 +16,7 @@ void MenuPedido::Inicializar_MenuPedido(){
     int opcao = 0;
     do{
         cout << endl << "Escolha uma opção" << endl;
-        cout << "1 - Ver Cardapio" << endl;
+        cout << "1 - Ver Cardápio" << endl;
         cout << "2 - Fazer Pedido" << endl;
         cout << "3 - Ver Pedido" << endl;
         cout << "4 - Remover Pedido" << endl;
@@ -38,7 +38,7 @@ void MenuPedido::Inicializar_MenuPedido(){
           Imprimir_Cardapio();
           break;
       case 2:
-          cout << "Digite o codido do seu pedido" << endl;
+          cout << "Digite o código do seu pedido" << endl;
           Inicializar_Pedido();
           break;
       case 3:
@@ -46,7 +46,7 @@ void MenuPedido::Inicializar_MenuPedido(){
           Imprimir_Pedido();
           break;
       case 4:
-          cout << "Digite o codigo do pedido que deseja retirar" << endl;
+          cout << "Digite o código do pedido que deseja retirar" << endl;
           Remover_Pedido();
           cout << "Pedido Removido" << endl;
           break;
@@ -55,7 +55,7 @@ void MenuPedido::Inicializar_MenuPedido(){
           cout << "Saindo" << endl;
           break;
           default:
-          cout << "opção invalida" << endl;
+          cout << "Opção inválida" << endl;
     }
   } while(opcao != 5);
 }
@@ -94,7 +94,7 @@ void MenuPedido::Inicializar_Pedido(){
         }
     }
     if(existe == false){
-        cout << "Codigo invalido" << endl;
+        cout << "Código inválido" << endl;
     }
     codigo.clear();
 }
@@ -127,7 +127,7 @@ void MenuPedido::Imprimir_Pedido(){
     for(const auto &Aleatorio : pedido.getPizzas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
-        cout << endl << "bebidas pedidas" << endl;
+        cout << endl << "Bebidas pedidas" << endl;
     for (const auto &Aleatorio : pedido.getBebidas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
@@ -141,7 +141,7 @@ void MenuPedido::Imprimir_Cardapio(){
     for (const auto &Aleatorio : cardapio.getPizzas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTamanho() << " - R$ " << Aleatorio.getValor() << endl;
-        cout << endl << "Cardapio Bebidas" << endl;
+        cout << endl << "Cardápio Bebidas" << endl;
     for (const auto &Aleatorio : cardapio.getBebidas())
         cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
         << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
