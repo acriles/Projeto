@@ -36,6 +36,16 @@ Cardapio::Cardapio()
              Pizza("#BP", "Bacon com Cheddar", "Pequena", 39.00),
              Pizza("#BM", "Bacon com Cheddar", "Média", 49.00),
              Pizza("#BG", "Bacon com Cheddar", "Grande", 59.00)} {}
-bool ExisteCodigo(string _codigo);
+bool Cardapio::ExisteCodigo(string _codigo) {
+  for (int i = 0; i < bebidas.size(); i++) {
+    if (_codigo == bebidas[i].getCodigo())
+      return true;
+  }
+  for (int i = 0; i < pizzas.size(); i++) {
+    if (_codigo == pizzas[i].getCodigo())
+      return true;
+  }
+  return false;
+}
 vector<Bebida> Cardapio::getBebidas() { return bebidas; }
 vector<Pizza> Cardapio::getPizzas() { return pizzas; }
