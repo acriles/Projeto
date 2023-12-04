@@ -18,7 +18,7 @@ Usuario::Usuario(string _nome, string _endereco, int _telefone, int _cpf){
 Usuario::~Usuario(void){ 
     nome.clear();
     endereco.clear();
-    cout << "Classe destruida" << endl;
+    //cout << "Classe destruida" << endl;
 }
 
 
@@ -90,16 +90,37 @@ void Usuario::confirmar_Usuario(){
             cout << "Reiniciando o cadastro:" << endl; 
             cadastroInicial();
         }
-    }
+    
 
-    else if(data.inserir_usuario(nome, endereco, telefone, cpf)){
+        else if(data.inserir_usuario(nome, endereco, telefone, cpf)){
         cout << "\nCadastro realizado com sucesso!\nCaso queira prosseguir com o pedido, digite 1, caso contrário digite qualaquer outra tecla.\n";
-    }
+        cin >> confirmacaoPedido;
 
+        if(confirmacaoPedido == 1){ 
+          cout << "Prosseguindo com pedido" << endl;
+          
+        } 
+        else{
+            while (confirmacaoPedido != 1){
+                cout << "Ficamos aguardando por você! Digite 1 para prosseguir com o pedido." << endl;
+                cin >> confirmacaoPedido;
+            }           
+        }
+        }
+    }
     else if(confimar_dados  == 2){
         Interface inter;
-        cout << "Iniciando Login!" <<endl;
-        inter.Fazer_login();
+
+        cout << "Digite 1 para fazer login e 2 para reiniciar o cadastro." <<endl;
+        int opcao;
+        cin >> opcao;
+        if (opcao == 1){
+          inter.Fazer_login();
+            }
+        if (opcao == 2){
+          cout << "Reiniciando Cadastro" <<endl;
+          cadastroInicial();
+        }
     }
     else{
         cout << "Você digitou:"<< confimar_dados <<endl;
