@@ -12,14 +12,7 @@ Bebida::Bebida(string _codigo, string _tipo, string _sabor, string _tamanho,
   codigo = _codigo;
 }
 
-// Metodos set e get
-void Bebida::setSabor(string _sabor) { sabor = _sabor; }
-
-void Bebida::setTipo(string _tipo) { tipo = _tipo; }
-
-void Bebida::setTamanho(string _tamanho) { tamanho = _tamanho; }
-
-void Bebida::setValor(float _valor) { valor = _valor; }
+// Metodos get
 
 string Bebida::getSabor() { return sabor; }
 
