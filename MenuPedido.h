@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
-#include "pedido.hpp"
-#include "Cardapio.hpp"
+#include "pedido.h"
+#include "Cardapio.h"
 using namespace std;
 
 class MenuPedido{
