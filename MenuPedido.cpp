@@ -2,67 +2,67 @@
 #include <limits>
 #include <iostream>
 using namespace std;
-// INICIALIZA MENU PEDIDO, COM AS CLASSES PEDIDO E CARDAPIO
-MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
-  pedido = _pedido;
-  cardapio = _cardapio;
+
+//Inicializa MenuPedido, com as classes Pedido e Cardapio
+MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio){
+    pedido = _pedido;
+    cardapio = _cardapio;
 }
 
-// INICIO DO MENU PEDIDO
-void MenuPedido::Inicializar_MenuPedido() {
-  int opcao = 0;
-  do {
-    cout << endl << "Escolha uma opção" << endl;
-    cout << "1 - Ver Cardapio" << endl;
-    cout << "2 - Fazer Pedido" << endl;
-    cout << "3 - Ver Pedido" << endl;
-    cout << "4 - Remover Pedido" << endl;
-    cout << "5 - Sair" << endl;
-    cout << "Opção: " << endl;
-    cin >> opcao;
 
-    if (std::cin.fail()) { // CONFERE SE A ENTRADA E UM INTEIRO
-      cin.clear();         // Limpar o buffer de entrada
-      cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//Início do MenuPedido
+void MenuPedido::Inicializar_MenuPedido(){
+    int opcao = 0;
+    do{
+        cout << endl << "Escolha uma opção" << endl;
+        cout << "1 - Ver Cardapio" << endl;
+        cout << "2 - Fazer Pedido" << endl;
+        cout << "3 - Ver Pedido" << endl;
+        cout << "4 - Remover Pedido" << endl;
+        cout << "5 - Sair" << endl;
+        cout << "Opção: " << endl;
+        cin >> opcao;
 
-      // Exibir mensagem de erro
-      cout << "Entrada inválida. Por favor, digite um número inteiro." << endl;
-      continue; // Continuar no próximo loop
-    }
+        if(std::cin.fail()){      //Confere se a entrada é um inteiro
+            cin.clear();     //Limpa o buffer de entrada
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            //Exibir mensagem de erro
+            cout << "Entrada inválida. Por favor, digite um número inteiro." << endl;
+            continue; // Continuar no próximo loop
+        }
     
-    switch (opcao) {
-    case 1:
-      cout << "Cardapio" << endl;
-      Imprimir_Cardapio();
-      break;
-    case 2:
-      cout << "Digite o codido do seu pedido" << endl;
-      Inicializar_Pedido();
-      break;
-    case 3:
-      cout << "Pedidos feitos" << endl;
-      Imprimir_Pedido();
-      break;
-    case 4:
-      cout << "Digite o codigo do pedido que deseja retirar" << endl;
-      Remover_Pedido();
-      cout << "Pedido Removido" << endl;
-      break;
-
-    case 5:
-      Valor_Total();
-      cout << "Saindo" << endl;
-      break;
-    default:
-      cout << "opção invalida" << endl;
+      switch(opcao){
+      case 1:
+          cout << "Cardapio" << endl;
+          Imprimir_Cardapio();
+          break;
+      case 2:
+          cout << "Digite o codido do seu pedido" << endl;
+          Inicializar_Pedido();
+          break;
+      case 3:
+          cout << "Pedidos feitos" << endl;
+          Imprimir_Pedido();
+          break;
+      case 4:
+          cout << "Digite o codigo do pedido que deseja retirar" << endl;
+          Remover_Pedido();
+          cout << "Pedido Removido" << endl;
+          break;
+      case 5:
+          Valor_Total();
+          cout << "Saindo" << endl;
+          break;
+          default:
+          cout << "opção invalida" << endl;
     }
-  } while (opcao != 5);
+  } while(opcao != 5);
 }
 
-void MenuPedido::Inicializar_Pedido() {
-  string codigo;
-  bool existe = false; // INDICA SE O CODIGO SELECIONADO EXISTE OU NAO
-  cin >> codigo;
+void MenuPedido::Inicializar_Pedido(){
+    string codigo;
+    bool existe = false;     //Indica se o código selecionado existe ou não
+    cin >> codigo;
   // VERIFICAR SE EXISTE BEBIDA COM ESSE CODIGO
   for (const auto &Aleatorio : cardapio.getBebidas()) {
     if (Aleatorio.getCodigo() == codigo) {
