@@ -7,7 +7,7 @@ using namespace std;
 //Métodos----------------------------------------------------
 
 //Função para que o usuário selecione a forma de pagamento----------------------------------------------------
-void Pagamentos::imprimeFormasPagamento()
+void Pagamentos::ImprimeFormasPagamento()
 {
     cout << "Digite o numero de acordo com a forma de pagamento que voce deseja:"<<endl;
     cout<<endl;
@@ -28,7 +28,7 @@ void Pagamentos::imprimeFormasPagamento()
     Cartao cartao;
 	
    
-    while(!(pagamento>=1 && pagamento<=4)){     //Verifica se a escolha está coerente com as opções apresentadas
+    while(!(pagamento>=1 && pagamento<=4)){        //Verifica se a escolha está coerente com as opções apresentadas
 	    cout<<endl;
       cout<< "OPCAO INVALIDA! Digite novamente: ";
       cin>>pagamento;			
@@ -55,7 +55,7 @@ void Pagamentos::imprimeFormasPagamento()
 			
 			
     cout<<endl;
-    cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada e saira para entrega em breve :)";
+    cout<<"PEDIDO CONFIRMADO! Sua pizza esta sendo preparada :)";
     cout<<endl;
 
 }
@@ -71,23 +71,5 @@ void Pagamentos::PIX ()
 //Função caso a forma de pagamento seja via Dinheiro (2)---------------------------------------------------
 void Pagamentos::Dinheiro ()
 {
-    cout<< "Pagamento a ser realizado na entrega."<<endl;
-    cout<< "Sera necessario troco?"<<endl;
-    cout<<endl;
-    cout<<"1. Sim" << endl;
-    cout<< "2. Nao" << endl;
-	
-    int escolhaTroco=0;
-    cout<<endl;
-    cin >> escolhaTroco;
-	
-    if(escolhaTroco==1){
-            cout<<endl;
-            cout<<"Troco para quanto?"<<endl;
-	
-            int valor;
-            cout<< "Valor em reais: ";
-            cin>>valor;
-		
-    }
+    cout<< "Pagamento a ser realizado no CAIXA."<<endl;
 }
