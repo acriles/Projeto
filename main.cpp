@@ -21,6 +21,8 @@ int main(){
 
     MenuPedido menu(pedido, cardapio);
     menu.Inicializar_MenuPedido(cpf);
+    Pagamentos pagamentos;
+    pagamentos.imprimeFormasPagamento();
 
     return 0;
 }
