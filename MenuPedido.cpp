@@ -1,5 +1,5 @@
-#include "MenuPedido.h"
-#include "excecao.h"
+#include "MenuPedido.hpp"
+#include "excecao.hpp"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -24,24 +24,21 @@ void MenuPedido::Inicializar_MenuPedido() {
     cout << "Opção: " << endl;
     cin >> opcao;
     try {
-
-      /*if (std::cin.fail()) { // CONFERE SE A ENTRADA E UM INTEIRO
-        cin.clear();         // Limpar o buffer de entrada
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        // Exibir mensagem de erro
-        cout << "Entrada inválida. Por favor, digite um número inteiro."
-             << endl;
-        continue; // Continuar no próximo loop
-      }*/
-
       if (opcao == "0") {
         cout << "Saindo do menu pedido..." << endl;
       } else if (opcao == "1") {
         Imprimir_Cardapio();
       } else if (opcao == "2") {
-        cout << "Digite o codido do seu pedido" << endl;
-        Inicializar_Pedido();
+        string codigo;
+        do {
+          cout << "Digite o codido do seu pedido" << endl;
+          cin >> codigo;
+          try {
+            Inicializar_Pedido(codigo);
+          } catch (CodigoInvalido e) {
+            cout << e.what();
+          }
+        } while ((cardapio.ExisteCodigo(codigo) == false) && codigo != "0");
       } else if (opcao == "3") {
         cout << endl << "Pedidos feitos" << endl;
         Imprimir_Pedido();
@@ -52,32 +49,6 @@ void MenuPedido::Inicializar_MenuPedido() {
         Valor_Total();
         cout << "Finalizando Pedido" << endl;
       } else {
-
-        /*  switch (opcao) {
-          case 0:
-            cout << "Saindo do menu pedido..." << endl;
-            break;
-          case 1:
-            Imprimir_Cardapio();
-            break;
-          case 2:
-            cout << "Digite o codido do seu pedido" << endl;
-            Inicializar_Pedido();
-            break;
-          case 3:
-            cout << endl << "Pedidos feitos" << endl;
-            Imprimir_Pedido();
-            break;
-          case 4:
-            cout << "Digite o codigo do pedido que deseja retirar" << endl;
-            Remover_Pedido();
-            break;
-
-          case 5:
-            Valor_Total();
-            cout << "Finalizando Pedido" << endl;
-            break;
-          default:*/
         throw OpcaoInvalido(opcao);
       }
     } catch (OpcaoInvalido e) {
@@ -86,53 +57,43 @@ void MenuPedido::Inicializar_MenuPedido() {
   } while (opcao != "5" && opcao != "0");
 }
 
-void MenuPedido::Inicializar_Pedido() {
-  string codigo;
+void MenuPedido::Inicializar_Pedido(string _codigo) {
   bool existe = false; // INDICA SE O CODIGO SELECIONADO EXISTE OU NAO
-  do {
-    cin >> codigo;
-    try {
-      // VERIFICA SE EXISTE BEBIDA COM ESSE CODIGO
-      for (const auto &Aleatorio : cardapio.getBebidas()) {
-        if (Aleatorio.getCodigo() == codigo) {
-          existe = true;
-          Bebida bebida(Aleatorio.getCodigo(), Aleatorio.getSabor(),
-                        Aleatorio.getTipo(), Aleatorio.getTamanho(),
-                        Aleatorio.getValor());
-          pedido.InserirBebida(bebida);        // INSERE A BEBIDA EM PEDIDO
-          cout << "Bebida selecionada" << endl // IMPRIME A BEBIDA ESCOLHIDA
-               << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor()
-               << " - " << Aleatorio.getTipo() << " - "
-               << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor()
-               << endl;
-        }
-      }
-      // VERIFICA SE EXISTE PIZZA COM ESSE CODIGO
-      for (const auto &Aleatorio : cardapio.getPizzas()) {
-        if (Aleatorio.getCodigo() == codigo) {
-          existe = true;
-          Pizza pizza(Aleatorio.getCodigo(), Aleatorio.getSabor(),
-                      Aleatorio.getTamanho(), Aleatorio.getValor());
-          pedido.InserirPizza(pizza);         // INSERE A PIZZA EM PEDIDO
-          cout << "Pizza selecionada" << endl // IMPRIME A PIZZA ESCOLHIDA
-               << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor()
-               << " - " << Aleatorio.getTamanho() << " -R$ "
-               << Aleatorio.getValor() << endl;
 
-          break;
-        }
-
-        if (existe == false) {
-          throw CodigoInvalido(codigo);
-          // cout << "Codigo invalido" << endl;
-        }
-      }
-    } catch (CodigoInvalido e) {
-      cout << e.what();
+  // VERIFICA SE EXISTE BEBIDA COM ESSE CODIGO
+  for (const auto &Aleatorio : cardapio.getBebidas()) {
+    if (Aleatorio.getCodigo() == _codigo) {
+      existe = true;
+      Bebida bebida(Aleatorio.getCodigo(), Aleatorio.getSabor(),
+                    Aleatorio.getTipo(), Aleatorio.getTamanho(),
+                    Aleatorio.getValor());
+      pedido.InserirBebida(bebida);        // INSERE A BEBIDA EM PEDIDO
+      cout << "Bebida selecionada" << endl // IMPRIME A BEBIDA ESCOLHIDA
+           << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+           << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
+           << Aleatorio.getValor() << endl;
     }
-  } while ((cardapio.ExisteCodigo(codigo) == false) && codigo != "0");
-}
+  }
+  // VERIFICA SE EXISTE PIZZA COM ESSE CODIGO
+  for (const auto &Aleatorio : cardapio.getPizzas()) {
+    if (Aleatorio.getCodigo() == _codigo) {
+      existe = true;
+      Pizza pizza(Aleatorio.getCodigo(), Aleatorio.getSabor(),
+                  Aleatorio.getTamanho(), Aleatorio.getValor());
+      pedido.InserirPizza(pizza);         // INSERE A PIZZA EM PEDIDO
+      cout << "Pizza selecionada" << endl // IMPRIME A PIZZA ESCOLHIDA
+           << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+           << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
 
+      break;
+    }
+
+    if (existe == false) {
+      throw CodigoInvalido(_codigo);
+      // cout << "Codigo invalido" << endl;
+    }
+  }
+}
 // REMOVE UM PEDIDO
 void MenuPedido::Remover_Pedido() {
   string codigo;
