@@ -20,7 +20,6 @@ void Data_base_Pedido:: inserir_pedidos(int cpf, string infoPizza, string infoBe
     con->setSchema(database);
 
     sql::Statement *stmt = con->createStatement();
-    cout<<infoBebida<<endl;
     string query = "INSERT INTO pedido (cp, infoPizza,infoBebida) VALUES (" + to_string(cpf) + ", '" + infoPizza + "', '" + infoBebida + "')";
 
 
@@ -52,7 +51,6 @@ void Data_base_Pedido::ler_pedido(int& _cpf, int tipo) {
     sql::ResultSet *res;
 
     string query = "SELECT * FROM pedido";
-    cout << 4<<endl;
     res = stmt->executeQuery(query);
 
     while (res->next()) {
