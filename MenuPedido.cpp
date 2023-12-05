@@ -2,6 +2,7 @@
 #include "excecao.h"
 #include <iostream>
 #include <limits>
+#include "banco_de_dados_pedido.h"
 using namespace std;
 // INICIALIZA MENU PEDIDO, COM AS CLASSES PEDIDO E CARDAPIO
 MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
@@ -41,12 +42,12 @@ void MenuPedido::Inicializar_MenuPedido(int& cpf) {
         } while ((cardapio.ExisteCodigo(codigo) == false) && codigo != "0");
       } else if (opcao == "3") {
         cout << endl << "Pedidos feitos" << endl;
-        Imprimir_Pedido();
+        Imprimir_Pedido(cpf);
       } else if (opcao == "4") {
         cout << "Digite o codigo do pedido que deseja retirar" << endl;
         Remover_Pedido();
       } else if (opcao == "5") {
-        Valor_Total();
+        Valor_Total(cpf);
         cout << "Finalizando Pedido" << endl;
       } else {
         throw OpcaoInvalido(opcao);
@@ -120,20 +121,44 @@ void MenuPedido::Valor_Total(int& cpf) {
     valortotal = valortotal + Aleatorio.getValor();
   cout << "Valor total do pedido: "
        << "R$" << valortotal << endl;
+
+    if (valortotal != 0){
+        Data_base_Pedido data;
+        cout << "Valor total do pedido: " << "R$" << valortotal << endl;
+
+        for(const auto &Aleatorio : pedido.getPizzas()) {
+        string infoPizza = Aleatorio.getCodigo() + " - " + Aleatorio.getSabor() + " - "
+        + Aleatorio.getTamanho() + " - R$ " + to_string(Aleatorio.getValor());
+        data.inserir_pedidos(cpf ,infoPizza,{});
+        }
+        for (const auto &Aleatorio : pedido.getBebidas()){
+            string infoBebida = Aleatorio.getCodigo() + " - " + Aleatorio.getSabor() + " - "
+            + Aleatorio.getTamanho() + " - R$ " + to_string(Aleatorio.getValor());
+            data.inserir_pedidos(cpf ,{},infoBebida);}
+    }   
+    
+    else{
+        cout << "Saindo" << endl;
+        return;
+    }
 }
 
 // IMPRIME PIZZAS E BEBIDAS DO PEDIDO
 void MenuPedido::Imprimir_Pedido(int& cpf) {
-  cout << "pizzas pedidas" << endl;
-  for (const auto &Aleatorio : pedido.getPizzas())
-    cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
-         << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
-
-  cout << endl << "bebidas pedidas" << endl;
-  for (const auto &Aleatorio : pedido.getBebidas())
-    cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
-         << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
-         << Aleatorio.getValor() << endl;
+  Data_base_Pedido data;
+    cout << "pizzas pedidas" << endl;
+    for(const auto &Aleatorio : pedido.getPizzas()){
+        cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+        << Aleatorio.getTamanho() << " -R$ " << Aleatorio.getValor() << endl;
+        }
+    data.ler_pedido(cpf, 1);
+    cout << endl << "Bebidas pedidas" << endl;
+    for (const auto &Aleatorio : pedido.getBebidas()){
+        cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
+        << Aleatorio.getTipo() << " - " << Aleatorio.getTamanho() << " -R$ "
+        << Aleatorio.getValor() << endl;
+        }
+    data.ler_pedido(cpf, 2);
 }
 // IMPRIME PIZZAS E BEBIDAS DO CARDAPIO
 void MenuPedido::Imprimir_Cardapio() {
