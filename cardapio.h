@@ -22,6 +22,6 @@ private:
 ///@brief Obtém o vetor de pizzas do cardápio
 ///@return Vetor contendo as pizzas disponíveis no cardápio
     vector<Pizza> getPizzas();
-
+  bool ExisteCodigo(string _codigo);
 };
 #endif // CARDAPIO_H
