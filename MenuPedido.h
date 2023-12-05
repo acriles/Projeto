@@ -32,7 +32,7 @@ public:
     void Imprimir_Cardapio();      
 
 ///@brief Remove o Pedido atual
-    void Remover_Pedido(string _codigo);        
+    void Remover_Pedido();        
 
 ///@brief Calcula e exibe o valor total do Pedido
     void Valor_Total(int& cpf);          
