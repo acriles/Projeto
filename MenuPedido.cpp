@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits>
 #include "banco_de_dados_pedido.h"
+#include "pagamentos.h"
 using namespace std;
 // INICIALIZA MENU PEDIDO, COM AS CLASSES PEDIDO E CARDAPIO
 MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
@@ -77,7 +78,10 @@ void MenuPedido::Inicializar_Pedido(string _codigo) {
   }
   // VERIFICA SE EXISTE PIZZA COM ESSE CODIGO
   for (const auto &Aleatorio : cardapio.getPizzas()) {
+
     if (Aleatorio.getCodigo() == _codigo) {
+      cout<<_codigo<<endl;
+
       existe = true;
       Pizza pizza(Aleatorio.getCodigo(), Aleatorio.getSabor(),
                   Aleatorio.getTamanho(), Aleatorio.getValor());
@@ -88,12 +92,12 @@ void MenuPedido::Inicializar_Pedido(string _codigo) {
 
       break;
     }
-
+  }
     if (existe == false) {
       throw CodigoInvalido(_codigo);
-      // cout << "Codigo invalido" << endl;
+      // cout << "Codigo invalido" << 2endl;
     }
-  }
+  
 }
 // REMOVE UM PEDIDO
 void MenuPedido::Remover_Pedido() {
@@ -119,8 +123,7 @@ void MenuPedido::Valor_Total(int& cpf) {
     valortotal = valortotal + Aleatorio.getValor();
   for (const auto &Aleatorio : pedido.getBebidas())
     valortotal = valortotal + Aleatorio.getValor();
-  cout << "Valor total do pedido: "
-       << "R$" << valortotal << endl;
+ 
 
     if (valortotal != 0){
         Data_base_Pedido data;
@@ -135,6 +138,10 @@ void MenuPedido::Valor_Total(int& cpf) {
             string infoBebida = Aleatorio.getCodigo() + " - " + Aleatorio.getSabor() + " - "
             + Aleatorio.getTamanho() + " - R$ " + to_string(Aleatorio.getValor());
             data.inserir_pedidos(cpf ,{},infoBebida);}
+        // PAGAMENTO
+        Pagamentos pagamentos;
+        pagamentos.ImprimeFormasPagamento();
+
     }   
     
     else{
