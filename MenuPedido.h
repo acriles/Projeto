@@ -19,12 +19,23 @@ public:
 ///@param _cardapio O cardápio a ser associado ao MenuPedido
     MenuPedido(Pedido _pedido, Cardapio _cardapio);
 
-    void Inicializar_MenuPedido(int& cpf);     //Inicializa o MenuPedido
-    void Inicializar_Pedido(string _codigo);        //Inicializa o Pedido
-    void Imprimir_Pedido(int& cpf);          //Imprime o Pedido atual
-    void Imprimir_Cardapio();       //Imprime o Cardápio disponível
-    void Remover_Pedido(string _codigo);         //Remove o Pedido atual
-    void Valor_Total(int& cpf);           //Calcula e exibe o valor total do Pedido
+///@brief Inicializa o MenuPedido
+    void Inicializar_MenuPedido(int& cpf);     
+
+///@brief Inicializa o Pedido
+    void Inicializar_Pedido(string _codigo);       
+
+///@brief Imprime o Pedido atual
+    void Imprimir_Pedido(int& cpf);         
+
+ ///@brief Imprime o Cardápio disponível
+    void Imprimir_Cardapio();      
+
+///@brief Remove o Pedido atual
+    void Remover_Pedido(string _codigo);        
+
+///@brief Calcula e exibe o valor total do Pedido
+    void Valor_Total(int& cpf);          
 
 };
 #endif // MENUPEDIDO_H
