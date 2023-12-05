@@ -60,6 +60,7 @@ public:
 ///@brief Insere o usuario cadastrado no banco de dados
      void inserir_usuario();
 
+///@brief Verifica se o usuário está cadastrado.
      void cadastrado();
 
 
