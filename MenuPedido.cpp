@@ -1,5 +1,5 @@
-#include "MenuPedido.hpp"
-#include "excecao.hpp"
+#include "MenuPedido.h"
+#include "excecao.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -10,7 +10,7 @@ MenuPedido::MenuPedido(Pedido _pedido, Cardapio _cardapio) {
 }
 
 // INICIO DO MENU PEDIDO
-void MenuPedido::Inicializar_MenuPedido() {
+void MenuPedido::Inicializar_MenuPedido(int& cpf) {
   string opcao = "0";
   do {
 
@@ -111,7 +111,7 @@ void MenuPedido::Remover_Pedido() {
   } while ((cardapio.ExisteCodigo(codigo) == false) && codigo != "0");
 }
 
-void MenuPedido::Valor_Total() {
+void MenuPedido::Valor_Total(int& cpf) {
   double valortotal = 0;
   // SOMA EM VALOR TOTAL O PRECO DE TODAS AS PIZZAS E BEBIDAS
   for (const auto &Aleatorio : pedido.getPizzas())
@@ -123,7 +123,7 @@ void MenuPedido::Valor_Total() {
 }
 
 // IMPRIME PIZZAS E BEBIDAS DO PEDIDO
-void MenuPedido::Imprimir_Pedido() {
+void MenuPedido::Imprimir_Pedido(int& cpf) {
   cout << "pizzas pedidas" << endl;
   for (const auto &Aleatorio : pedido.getPizzas())
     cout << Aleatorio.getCodigo() << " - " << Aleatorio.getSabor() << " - "
