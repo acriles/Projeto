@@ -7,12 +7,8 @@ dados pessoais para sua identificação. Para fazer acesso à conta de usuário 
 disso, pela interface o cliente poderá selecionar o que irá pedir, podendo escolher as mais variadas pizzas e bebidas, sendo possível também 
 fazer alterações extras nos acréscimos das pizzas selecionadas. </p>
 
-* [Status do Projeto](#status-do-Projeto)
-
-
 * [Funcionalidades e Aplicação](#funcionalidades-e-aplicação) <br>
-O projeto tem como principal funcionalidade fazer o pedido de uma pizza com uma interface online. <br>
-
+O projeto tem como principal funcionalidade fazer o pedido de uma pizza com uma interface online. Contendo como principais aplicacoes o cadastro de usuario e pedido, que engloba pizzas e bebidas. Alem disso, com possibilidade de acesso e login ao usuario anteriormente cadastrado. <br>
 
 * [Acesso ao Projeto](#acesso-ao-projeto) <br> <br>
 
@@ -23,28 +19,7 @@ Link do projeto para a clonagem:
 Compilação:
 
 ```bash
-  * Necessita-se que seja feita usando WSL*
-  
-  - Abra seu terminal de preferencia onde seja possivel o uso do ambiente Linux
-
-  - Encaminhe para pasta onde foi clonada o programa
-
-  - Use o comando 'make' para realizar a compilação por meio do Makefile. Caso deseje limpar a compilação ja feita, basta dar 'make clean')
-
-  - Após concluida a compilação, digite './main.out'
-  
-  - Quando concluido, o programa estará pronto para uso
-```
-```
-Para realizar os testes de unidade do programa, é necessario:
-
- - Estar com o programa compilado (como ensinado anteriormente)
-
- - Caso o arquivo de teste nao seja encontrado, é necessario digitar 'make test'
-
- - Execute, no mesmo terminal de compilação, './test.out', para verificar apenas os testes falhos
-
- - Para vizualizar os teste funcionais, execute './test.out -s'
+  *Necessita-se que seja feita usando WSL*
 ```
 
 * [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
