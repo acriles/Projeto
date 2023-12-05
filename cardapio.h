@@ -12,6 +12,7 @@ class Cardapio{
 
   public:
     Cardapio();
+  bool ExisteCodigo(string _codigo);
     vector<Bebida> getBebidas();
     vector<Pizza> getPizzas();
 };
