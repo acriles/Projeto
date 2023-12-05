@@ -20,6 +20,8 @@ Compilação:
 
 ```bash
   *Necessita-se que seja feita usando WSL*
+Sendo realizada atraves do comando: g++ "todos arquivos cpp descritos" -o "nome.do.executavel" -lymysqlcppconn 
+Para que a compilacao do banco de dados seja completa, deve-se baixar no mesmo diretorio do projeto o arquivo mysql-connector-c++-8.2.0-winx64, utilizado para a compilacao do mesmo. 
 ```
 
 * [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
