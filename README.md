@@ -20,6 +20,7 @@ Compilação:
 
 ```bash
   *Necessita-se que seja feita usando WSL*
+É necessário para instalar os arquivos de desenvolvimento da biblioteca MySQL Connector/C++ usando o comando apt-get install libmysqlcppconn-dev
 Sendo realizada atraves do comando: g++ "todos arquivos cpp descritos" -o "nome.do.executavel" -lymysqlcppconn 
 Para que a compilacao do banco de dados seja completa, deve-se baixar no mesmo diretorio do projeto o arquivo mysql-connector-c++-8.2.0-winx64, utilizado para a compilacao do mesmo. 
 ```
